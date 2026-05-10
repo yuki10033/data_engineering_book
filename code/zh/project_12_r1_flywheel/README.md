@@ -38,7 +38,7 @@ project_12_r1_flywheel/
 建议使用独立 conda 环境：
 
 ```bash
-cd /home/xuxin/book/11_p12_r1_reasoning_flywheel/project_12_r1_flywheel
+cd p12_r1_reasoning_flywheel/project_12_r1_flywheel
 conda env create -f environment.yml
 conda activate p12-r1-flywheel
 ```
