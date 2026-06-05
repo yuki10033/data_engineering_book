@@ -18,7 +18,7 @@
 - [第九篇：数据资产、数据产品与数据契约](part9/index.md)
 - [第十篇：智能化数据工程与 Data Engineering Agent](part10/index.md)
 - [第十一篇：隐私合规与数据安全](part11/index.md)
-- [第十二篇：数据工程数据集、算法、评测与归因](part12/index.md)
+- [第十二篇：专项数据集与数据工程实践](part12/index.md)
 - [第十三篇：项目实战](part13/index.md)
 - [第十四篇：开源大模型数据工程实战](part14/index.md)
 
@@ -127,17 +127,17 @@
 - [第36章：数据合规框架与治理](part11/ch36_compliance_framework_and_governance.md)
 - [第37章：联邦学习与隐私保护技术](part11/ch37_federated_learning_and_privacy_preserving_technologies.md)
 
-## 第十二篇：数据工程数据集、算法、评测与归因
+## 第十二篇：专项数据集与数据工程实践
 
-第十二篇承接高校合作数据集、算法、开放基准与实验归因，把数据集、算法卡、实验卡、排行榜和教学复现组织成可维护的工程体系。
+第十二篇以若干具有代表性的专项数据集为线索，讨论数据工程方法在真实任务中的组织方式。各章围绕任务定义、样本 schema、构建流水线、质量控制、评测协议和合规风险展开，并向后连接项目实战与开源模型数据配方。
 
 - [本篇目录](part12/index.md)
-- [第38章：数据工程任务与数据集体系](part12/ch38_dataset_tasks_and_system.md)
-- [第39章：数据质量评估、修复算法与主动学习](part12/ch39_quality_assessment_repair_active_learning.md)
-- [第40章：清洗、去重、去污染与隐私数据集](part12/ch40_cleaning_dedup_decontamination_privacy_datasets.md)
-- [第41章：多模态解析、RAG 与 Agent 轨迹数据集](part12/ch41_multimodal_rag_agent_datasets.md)
-- [第42章：数据实验设计、评测方法与效果归因](part12/ch42_experiment_design_evaluation_attribution.md)
-- [第43章：开放基准、排行榜与教学实验](part12/ch43_open_benchmarks_leaderboards_teaching.md)
+- [第38章：StructBill-CN 票据文档理解数据工程](part12/ch38_structbill_cn_dataset.md)
+- [第39章：SparseTable-Bench 表格结构鲁棒性数据工程](part12/ch39_sparse_table_bench_dataset.md)
+- [第40章：多图表信息图推理数据工程](part12/ch40_multi_chart_infographic_reasoning_dataset.md)
+- [第41章：Ophiuchus 工具集成医学 VQA 数据工程](part12/ch41_ophiuchus_tool_integrated_vqa_dataset.md)
+- [第42章：VoiceStyleControl 可控语音交互数据工程](part12/ch42_voice_style_control_dataset.md)
+- [第43章：Latent-Switch-69K 隐式/显式推理数据工程](part12/ch43_latent_switch_69k.md)
 
 ## 第十三篇：项目实战
 
