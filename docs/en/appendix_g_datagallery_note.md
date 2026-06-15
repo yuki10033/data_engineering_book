@@ -1,7 +1,5 @@
 # Appendix G: DataGallery Open-source Ecosystem Overview
 
-<div class="chapter-authors">Xuhong Cao</div>
-
 ## G.1 Purpose of This Appendix
 
 This appendix explains where DataGallery sits in Project 15 and in the agentic data engineering practices discussed in this book. The public open-source entry for DataGallery is hosted on GitCode at [https://gitcode.com/datagallery](https://gitcode.com/datagallery). This appendix is not an installation manual for DataGallery or DataAgent, nor does it replace the README, example configurations, dependency notes, or release records in the corresponding repositories. When reproducing an experiment or integrating the project into an engineering system, readers should treat the public repository, a specific tag or commit, and the project documentation as the source of truth (DataGallery Contributors 2026a; DataGallery Contributors 2026b).

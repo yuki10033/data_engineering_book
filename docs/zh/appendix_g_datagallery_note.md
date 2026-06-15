@@ -1,7 +1,5 @@
 # 附录G：DataGallery 开源生态简介
 
-<div class="chapter-authors">曹旭宏（Xuhong Cao）</div>
-
 ## G.1 附录定位
 
 本附录用于说明 DataGallery 在本书项目十五及相关 Agent 数据工程实践中的位置。DataGallery 的公开开源入口位于 GitCode：[https://gitcode.com/datagallery](https://gitcode.com/datagallery)。本附录不是 DataGallery 或 DataAgent 的安装手册，也不替代对应仓库中的 README、示例配置、依赖说明和发布记录；读者在复现实验或接入工程系统时，应以公开仓库、具体 tag、commit 和项目文档为准（DataGallery Contributors 2026a; DataGallery Contributors 2026b）。
