@@ -176,13 +176,17 @@ def find_caption(lines: list[str], image_line_index: int) -> str:
         line = lines[idx].strip()
         if not line:
             continue
-        if line.startswith(("![", "```", "|", "#")):
+        if line.startswith(("![", "```", "|", "#")) or re.search(r"</?figure\b|<img\b", line, flags=re.I):
             break
         candidates.append(line)
         if re.search(r"(?:Figure|Fig\.?|图)\s*[A-Z]?\d+", line, flags=re.I):
             break
     if not candidates:
         alt_line = lines[image_line_index].strip()
+        if re.search(r"<img\b", alt_line, flags=re.I):
+            attrs = dict(ATTR_RE.findall(alt_line))
+            if attrs.get("alt", "").strip():
+                return clean_caption(attrs["alt"].strip())
         return clean_caption(alt_line)
     return clean_caption(" ".join(candidates))
 
@@ -319,13 +323,10 @@ def zh_reference_for(en_path: str, image_index: int) -> tuple[str, str]:
         return "", ""
     lines = zh_path.read_text(encoding="utf-8", errors="replace").splitlines()
     count = 0
-    for idx, line in enumerate(lines):
-        match = IMAGE_RE.search(line)
-        if not match:
-            continue
+    for line_no, markdown_alt, _raw_src in iter_markdown_images("\n".join(lines)):
         count += 1
         if count == image_index:
-            return find_caption(lines, idx), match.group(1).strip()
+            return find_caption(lines, line_no - 1), markdown_alt
     return "", ""
 
 
@@ -404,7 +405,11 @@ def collect_rows() -> list[AltTextRow]:
 def write_csv(rows: list[AltTextRow], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(asdict(rows[0]).keys()) if rows else list(AltTextRow.__dataclass_fields__.keys()))
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=list(asdict(rows[0]).keys()) if rows else list(AltTextRow.__dataclass_fields__.keys()),
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(asdict(row) for row in rows)
 

@@ -34,7 +34,7 @@ Ordinary image datasets usually center on image files and human labels, and samp
 
 This relationship has at least three kinds of fragility. The first is temporal fragility: URLs expire, images update, and pages redirect. The second is semantic fragility: alt text may serve accessibility, SEO, or template display rather than image description. The third is governance fragility: a publicly accessible URL does not imply clear authorization, nor does it imply the absence of faces, children, medical content, trademarks, or watermark risk.
 
-### 39.1.2 CLIP Scores Solve Only Part of Image-Text Relevance
+### 39.1.1 CLIP Scores Solve Only Part of Image-Text Relevance
 
 LAION-5B's core filtering signal comes from cosine similarity between image and text embeddings. Let the image encoder be $f_I$, the text encoder be $f_T$, the image be $i$, and the text be $t$. The image-text similarity can be written as:
 
@@ -73,7 +73,7 @@ The final training sample is not a direct copy of the Web trace, but a structure
 
 Image-text candidate pools should also be modeled by channel. The Parquet metadata fields listed in the LAION-5B paper include a 64-bit integer id, image URL, text, image height and width, cosine similarity between image and text embeddings, and NSFW and watermark-detection scores. When reusing such corpora, engineering teams usually need to add governance fields such as download status, hash, authorization hints, and removal status.
 
-![Figure 39-1 Multi-channel schema for LAION-5B image-text candidate records](../../images/part12/ch43_01_laion_multichannel_schema_en.svg)
+![Figure 39-1 Multi-channel schema for LAION-5B image-text candidate records](../../images/part12/ch39_01_laion_multichannel_schema_en.svg)
 
 *Figure 39-1 Multi-channel schema for LAION-5B image-text candidate records. Source: original illustration based on the LAION-5B paper and LAION dataset-spec.*
 
@@ -194,7 +194,7 @@ where $c$ is the filtering configuration, $r$ is the sampling random seed, and $
 
 Controllable speech data must validate semantics, style, and audio quality simultaneously; LAION-5B-like image-text data must likewise validate text, vision, alignment, risk, and reproducibility simultaneously. Looking only at CLIP scores is insufficient, and so is looking only at manual sampling. The quality system should combine automatic metrics with human review in a closed loop, sending problematic samples into redownload, refiltering, downweighting, isolation, or removal queues.
 
-![Figure 39-2 Image-text candidate-pool quality evaluation and closed-loop repair](../../images/part12/ch43_02_laion_quality_datacomp_loop_en.svg)
+![Figure 39-2 Image-text candidate-pool quality evaluation and closed-loop repair](../../images/part12/ch39_02_laion_quality_datacomp_loop_en.svg)
 
 *Figure 39-2 Image-text candidate-pool quality evaluation and closed-loop repair. Source: original illustration based on the LAION-5B paper and DataComp benchmark design.*
 

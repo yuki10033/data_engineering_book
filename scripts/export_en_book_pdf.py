@@ -423,6 +423,33 @@ figure {
   break-inside: auto;
 }
 
+.figure-grid {
+  margin: 2mm 0;
+}
+
+.figure-grid > p {
+  display: grid;
+  gap: 2mm;
+  align-items: start;
+  margin: 0;
+}
+
+.figure-grid-4 > p {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.figure-grid a {
+  display: block;
+}
+
+.figure-grid img {
+  width: 100%;
+  max-width: 100%;
+  max-height: none;
+  height: auto;
+  margin: 0;
+}
+
 figcaption {
   font-size: 8.4pt;
   line-height: 1.3;

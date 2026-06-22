@@ -12,7 +12,7 @@ reasoning traces; Long-CoT; Latent-Switch-69K; implicit computation; supervision
 
 ## Latent-Switch-69K: Reasoning Trace Compression and Latent Compute Slots
 
-### Latent-Switch.0: Learning Objectives
+### Learning Objectives
 
 After completing this chapter, readers should be able to:
 
@@ -22,7 +22,7 @@ After completing this chapter, readers should be able to:
 - Evaluate risks in reasoning data compression, including answer consistency, verification sufficiency, compression boundaries, and domain bias.
 - Transfer the latent-switch concept of separating hidden planning from explicit verification to custom datasets in mathematics, code, and complex instruction-following tasks.
 
-### Latent-Switch.1: Opening Problem: Why Does Long-CoT Still Need to Be Compressed
+### 43.1 Opening Problem: Why Does Long-CoT Still Need to Be Compressed
 
 Chapters 18 through 20 have already covered the basic forms of Chain-of-Thought data, tool-call traces, and agent interaction data. For reasoning models, long chains of thought carry obvious appeal: the model writes out intermediate steps, allowing trainers to inspect whether it is solving problems along some interpretable path, and making it easier at inference time to detect errors through self-consistency sampling, verifiers, or process reward models. However, once Long-CoT transitions from research examples into training corpora, the problems immediately become engineering problems.
 
@@ -30,13 +30,13 @@ First, long CoT carries a high token cost. Derivations in mathematics, code, and
 
 Latent-Switch-69K emerged against this backdrop. It is neither a simple "shorter CoT dataset" nor a collection of Long-CoT samples summarized and directly used for SFT. It serves [LaTER](https://github.com/TioeAre/LaTER)-style latent-then-explicit reasoning systems: the model first passes through a bounded latent reasoning interval, completing high-level planning and compressed thinking in continuous hidden states, then switches back to visible text and uses a shorter explicit CoT for symbolic verification, before generating the final answer. The data engineering objective therefore shifts: samples must answer not only "what is the answer" but also "which content is appropriate for the hidden planning budget and which content still needs to serve as visible verification supervision."
 
-![Figure 43-1: Latent-Switch-69K Construction Pipeline](../../images/part12/ch43_latent_switch_pipeline.svg)
+![Figure 43-1: Latent-Switch-69K Construction Pipeline](../../images/part12/ch43_01_latent_switch_pipeline.svg)
 
 *Figure 43-1: Latent-Switch-69K distills reasoning traces from Dolci-Think-SFT-32B into solution intuitions, compressed CoT, latent budgets, student sequences, and mask-aligned SFT records.*
 
 This chapter builds on Part V's synthetic data engineering and Part VI's reasoning data engineering. Chapters 15 through 17 discuss how to generate, distill, and quality-check high-quality training samples; Chapter 18 covers the organization of explicit CoT; and Chapters 19 and 20 cover the recording of intermediate states in tool and agent traces. Latent-Switch-69K pushes these threads to a finer level: intermediate reasoning need not always be stored as natural language, and datasets can explicitly reserve slots for hidden computation. Looking ahead, this chapter connects naturally to Chapter 45 on post-training data recipes, Chapter 46 on RL reasoning data engineering, and the reasoning flywheel projects in Part XIV (P06, P10, P12).
 
-### Latent-Switch.2: Dataset Overview: Scale, Difficulty, and Domain Composition
+### 43.2 Dataset Overview: Scale, Difficulty, and Domain Composition
 
 The final training split of the [Latent-Switch-69K dataset](https://huggingface.co/datasets/Tioe/LATENT-SWITCH-69K) contains 69,745 samples. Each retained sample includes a user question, a distilled solution intuition, a shortened explicit CoT, a final answer, latent-step metadata, and masks that determine how different token spans are supervised during training. This structure distinguishes it from ordinary CoT/SFT data: standard SFT records typically require only a prompt and an assistant output, and standard CoT data typically requires only that reasoning and the answer be written inside `<think>` tags or natural-language paragraphs. Latent-Switch-69K additionally records a budget for hidden planning and renders that budget as latent placeholders in the student sequence.
 
@@ -55,7 +55,7 @@ In terms of difficulty distribution, the dataset does not pursue perfect uniform
 
 In terms of domain composition, Latent-Switch-69K skews heavily toward reasoning-intensive tasks. Mathematics problems account for approximately 37%, code problems for approximately 34%, science-oriented questions for approximately 5%, and the remainder comes primarily from instruction-following and general-knowledge prompts. This proportion is not accidental. The tasks that most benefit from latent-then-explicit reasoning are those that involve "a high-level solution plan but where one does not want to unroll all derivations"; mathematics and code have strong verifiability, clear step structure, and high token costs. Science questions provide conceptual reasoning and multi-condition judgment scenarios, while general instruction and knowledge samples prevent the model from learning only the expression patterns of competition mathematics or code completion.
 
-![Figure 43-2: Latent-Switch-69K Data Sources and Domain Composition](../../images/part12/ch40_05_dataset_composition.png)
+![Figure 43-2: Latent-Switch-69K Data Sources and Domain Composition](../../images/part12/ch43_02_dataset_composition.png)
 
 *Figure 43-2: The final training set contains 69,745 samples; mathematics, code, and precise instruction-following data account for a large share.*
 
@@ -71,7 +71,7 @@ The third group is length and budget fields, including source CoT length, distil
 
 The fourth group is supervision fields, including `prompt_mask`, `latent_internal_mask`, `latent_boundary_mask`, `cot_mask`, `answer_mask`, and `teacher_kl_mask`. These masks determine how the same token sequence is interpreted during training. Ordinary dataset schemas typically care only about whether text fields are present; Latent-Switch-69K must also treat masks as data assets. The reason is straightforward: the same span of text, given different masks, corresponds to a different training objective. A latent placeholder fitted with CE becomes an ordinary token; masked and replaced by a recurrent latent state, it becomes a hidden computation slot.
 
-### Latent-Switch.3: Distillation and Record Formation: From Teacher Trace to Compressed Reasoning Record
+### 43.3 Distillation and Record Formation: From Teacher Trace to Compressed Reasoning Record
 
 The starting point for constructing Latent-Switch-69K is reasoning traces sampled from Dolci-Think-SFT-32B. These original traces, understood as source reasoning traces, contain the question, one or more assistant outputs, a possible ground truth or extractable answer, and source and metadata. The construction process does not directly filter for short answers; instead, it first decomposes long traces into two complementary objectives: a high-level problem-solving intent and a shorter explicit verification chain.
 
@@ -180,7 +180,7 @@ record = asyncio.run(
 )
 ```
 
-![Figure 43-3: Comparison of Original CoT, Compressed CoT, and Latent Placeholders](../../images/part12/ch43_cot_latent_comparison.svg)
+![Figure 43-3: Comparison of Original CoT, Compressed CoT, and Latent Placeholders](../../images/part12/ch43_03_cot_latent_comparison.svg)
 
 *Figure 43-3: The extensive visible reasoning in the source trace is split into two types of signal: solution intuition is used to estimate the latent budget, and the compressed CoT is used for explicit verification and answer supervision.*
 
@@ -193,7 +193,7 @@ $$
 
 The mean compression ratio across the final corpus is 0.612 and the median is 0.569. This indicates that the distilled visible CoT typically retains approximately 57% to 61% of the original reasoning length. This figure should not be interpreted as "forty percent of reasoning information has been deleted." A more accurate reading is: some details have been compressed into the high-level plan represented by the solution intuition and further mapped onto the latent placeholder budget, while the necessary derivations still retained inside `<think>` serve for explicit verification and to supervise the model's visible reasoning style.
 
-![Figure 43-4: Distributions of Original and Distilled Reasoning Length and Compression Ratio](../../images/part12/ch40_07_token_compression_distribution.png)
+![Figure 43-4: Distributions of Original and Distilled Reasoning Length and Compression Ratio](../../images/part12/ch43_04_token_compression_distribution.png)
 
 *Figure 43-4: This figure shows the distributions of source CoT length, distilled CoT length, intuition length, ground truth length, and compression ratio.*
 
@@ -213,7 +213,7 @@ Stage five is sequence rendering. The system renders the problem, latent placeho
 
 Stage six is mask materialization. The data loader re-locates boundaries based on token IDs and constructs labels, loss weights, and various masks. This stage should not rely solely on character offsets in the raw string, because changing the tokenizer will invalidate character offsets. A more robust approach is to construct spans based on the positions of special tokens in the token ID sequence, and to validate for each sample that boundary token counts, ordering, answer span, and teacher-reference span are all valid.
 
-### Latent-Switch.4: Latent Budget and Student Sequence: How Samples Are Rendered
+### 43.4 Latent Budget and Student Sequence: How Samples Are Rendered
 
 One of the key fields in Latent-Switch-69K is `n_latent_steps`. It determines how many latent placeholders are placed between `<latent_think>` and `</latent_think>` in the student sequence. The basic heuristic adopted in the paper and code is: if the retained solution intuition contains \(L\) tokens, the latent budget is approximately \(L/2\), clipped by a maximum latent length and tokenizer constraints. In the final data, the mean latent step count is 41.49 and the median is 40.00.
 
@@ -322,7 +322,7 @@ In a production data warehouse, student sequences should not be stored solely as
 
 The teacher-reference conversation is another sequence that is easy to overlook. It is not a copy of the student sequence; rather, it is a reference conversation constructed by omitting latent placeholders. The teacher input contains the original question and the solution intuition, and the assistant continuation is the compressed CoT and the answer. This design focuses teacher KL supervision on visible reasoning quality and answer distribution rather than requiring the teacher to understand the student's internal latent slots. In other words, the student sequence trains the latent-then-explicit format, while the teacher reference provides a distributional reference for the explicit verification portion; the two serve different supervision objectives.
 
-### Latent-Switch.5: Supervision Masks: Which Tokens Contribute to the Loss
+### 43.5 Supervision Masks: Which Tokens Contribute to the Loss
 
 The supervision design of Latent-Switch-69K can be summarized in one sentence: prompt tokens and latent interior placeholders do not participate in ordinary token-level CE; structural boundaries, explicit CoT, answers, and end tokens participate in targeted supervision; and teacher KL applies only to selected explicit CoT and answer positions.
 
@@ -340,7 +340,7 @@ x_i, & \text{otherwise}.
 
 Here \(\mathcal{S}_{\mathrm{prompt}}\) denotes positions in the user prompt and the context preceding the assistant prefix, and \(\mathcal{S}_{\mathrm{latent\_inner}}\) denotes the interior placeholder positions between `<latent_think>` and `</latent_think>`. Tokens set to `-100` are not directly fitted by ordinary CE. This avoids an erroneous objective: requiring the model to predict a specific fixed text token at latent interior positions. For LaTER, the value of latent interior positions lies not in outputting `<|endoftext|>` tokens but in allowing the model to execute a number of hidden state updates.
 
-![Figure 43-5: Supervision Mask Schematic](../../images/part12/ch43_supervision_mask.svg)
+![Figure 43-5: Supervision Mask Schematic](../../images/part12/ch43_05_supervision_mask.svg)
 
 *Figure 43-5: Prompt and latent interior tokens are masked from ordinary CE; latent boundaries, explicit CoT, answers, and end tokens are controlled by different weights and masks.*
 
@@ -372,7 +372,7 @@ These invariants should be checked at both the data construction stage and the t
 
 Another detail worth noting is the weight applied to explicit CoT. Latent-Switch-69K does not aim to delete explicit reasoning but to reduce dependence on complete long CoT. If CoT weight is too high, the model will tend to direct its capacity toward reproducing visible reasoning text; if too low, the model may learn only structure and answers while the explicit verification chain weakens. On the data side, at minimum a configurable `cot_loss_weight` or equivalent field should be retained, enabling trainers to adjust the balance between "visible verification" and "final answer" for different tasks.
 
-### Latent-Switch.6: Quality Control: Five Categories of Risk in Compression, Boundaries, and Bias
+### 43.6 Quality Control: Five Categories of Risk in Compression, Boundaries, and Bias
 
 Quality control for Latent-Switch-69K is not merely about filtering dirty text. Because the dataset simultaneously contains compressed reasoning, latent budgets, and multiple masks, risks are distributed across multiple layers.
 
@@ -408,7 +408,7 @@ At the distribution level, check the joint distribution of difficulty, domain, s
 
 At the versioning level, each release should include a data version number, build script version, teacher model version, tokenizer version, special-token contract, filtering rules, and statistical reports. The auditability of a dataset like Latent-Switch-69K derives from the combination of text, structure, and configuration. If only the final text is preserved, it will be very difficult years later to explain why a given sample has 38 latent steps, why a particular CoT was down-weighted, or why certain teacher KL positions were skipped.
 
-### Latent-Switch.7: Cross-Chapter Links: From Reasoning Data to the Reasoning Flywheel
+### 43.7 Cross-Chapter Links: From Reasoning Data to the Reasoning Flywheel
 
 Placing Latent-Switch-69K back within the book's overall structure, its value lies not in introducing an isolated dataset but in demonstrating a new interface for reasoning data.
 
@@ -429,7 +429,7 @@ Finally, the engineering conclusions of this chapter can be compressed into four
 
 If a team reuses only the text output of Latent-Switch-69K while ignoring `n_latent_steps`, latent boundaries, and supervision masks, the result is merely a shorter CoT SFT dataset. Only by managing compression ratio, latent placeholders, student sequences, and masks as a unified data engineering artifact does the dataset fully embody the design principles of latent-then-explicit reasoning.
 
-### Latent-Switch.8: Reuse Recommendations: Transferring the Latent-Switch Approach to Custom Data
+### 43.8 Reuse Recommendations: Transferring the Latent-Switch Approach to Custom Data
 
 If a team wishes to apply the ideas behind Latent-Switch-69K to their own mathematical, code, or business reasoning data, the recommended first step is not to modify the model architecture. A more prudent path is to construct the data schema first. The team can start by extracting a small batch of high-quality questions from existing Long-CoT samples, generating solution intuitions manually or with a teacher model, and then generating compressed CoT and final answers. Next, assign a conservative latent budget based on intuition length—for instance, choosing one or two versions from $L/3$, $L/2$, and a fixed 32 steps for comparison. The value of this approach is that the team can first verify whether data can be stably rendered, whether masks are correct, and whether answers are consistent, without immediately committing to expensive training runs.
 
@@ -441,7 +441,7 @@ The fourth step is to interpret results carefully. If a model achieves similar a
 
 This is also why this chapter repeatedly emphasizes schema, masks, and quality reports: whether latent reasoning can be successfully deployed depends first on whether the data has clearly defined the interface for hidden planning. This point is especially important.
 
-### Latent-Switch: Summary
+### 43.9 Summary
 
 Latent-Switch-69K illustrates an important shift in reasoning data engineering: from "collecting longer and more detailed CoT" toward "designing more effective reasoning supervision structures." Starting from reasoning traces from Dolci-Think-SFT-32B, the process uses teacher distillation to extract solution intuitions and compressed CoT, maps intuition length to a latent budget, and renders the result as a student sequence composed of `<latent_think>`, placeholders, `<think>`, and answer tokens. The prompt and latent interior are masked from ordinary CE; boundaries, explicit reasoning, answers, and end tokens each receive their own supervision; and teacher KL applies only to selected visible positions.
 

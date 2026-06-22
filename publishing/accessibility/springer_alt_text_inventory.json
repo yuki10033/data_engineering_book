@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-06-22T10:59:04.552289+00:00",
+  "generated_at_utc": "2026-06-22T14:35:22.028190+00:00",
   "scope": "English Springer manuscript local image references in mkdocs navigation order",
-  "row_count": 288,
+  "row_count": 291,
   "rows": [
     {
       "row_id": "ALT-0001",
@@ -2798,7 +2798,7 @@
       "figure_number": "38-1",
       "caption": "Figure 38-1 FineWeb MinHash deduplication and PII-processing flow. Source: original illustration based on Hugging Face DataTrove examples/fineweb.py and the FineWeb dataset card",
       "image_alt_in_markdown": "Figure 38-1 FineWeb MinHash deduplication and PII-processing flow",
-      "image_file": "docs/images/part12/ch41_01_fineweb_minhash_pii_flow_en.svg",
+      "image_file": "docs/images/part12/ch38_01_fineweb_minhash_pii_flow_en.svg",
       "image_exists": "yes",
       "image_dimensions": "2048x1152",
       "image_format": "svg",
@@ -2822,7 +2822,7 @@
       "figure_number": "38-2",
       "caption": "Figure 38-2 FineWeb data-processing-choice ablation loop. Source: original illustration based on FineWeb paper Section 3.1",
       "image_alt_in_markdown": "Figure 38-2 FineWeb data-processing-choice ablation loop",
-      "image_file": "docs/images/part12/ch41_02_fineweb_ablation_loop_en.svg",
+      "image_file": "docs/images/part12/ch38_02_fineweb_ablation_loop_en.svg",
       "image_exists": "yes",
       "image_dimensions": "2048x1152",
       "image_format": "svg",
@@ -2846,7 +2846,7 @@
       "figure_number": "38-3",
       "caption": "Figure 38-3 Dolma transparent-corpus evidence chain. Source: original illustration based on AllenAI Dolma Toolkit documentation",
       "image_alt_in_markdown": "Figure 38-3 Dolma transparent-corpus evidence chain",
-      "image_file": "docs/images/part12/ch42_01_dolma_evidence_chain_en.svg",
+      "image_file": "docs/images/part12/ch38_03_dolma_evidence_chain_en.svg",
       "image_exists": "yes",
       "image_dimensions": "2048x1152",
       "image_format": "svg",
@@ -2870,7 +2870,7 @@
       "figure_number": "38-4",
       "caption": "Figure 38-4 Dolma source mix and training-diagnosis loop. Source: original illustration based on the Dolma dataset card and OLMo training use",
       "image_alt_in_markdown": "Figure 38-4 Dolma source mix and training-diagnosis loop",
-      "image_file": "docs/images/part12/ch42_02_dolma_source_mix_diagnosis_en.svg",
+      "image_file": "docs/images/part12/ch38_04_dolma_source_mix_diagnosis_en.svg",
       "image_exists": "yes",
       "image_dimensions": "2048x1152",
       "image_format": "svg",
@@ -2894,7 +2894,7 @@
       "figure_number": "39-1",
       "caption": "Figure 39-1 Multi-channel schema for LAION-5B image-text candidate records. Source: original illustration based on the LAION-5B paper and LAION dataset-spec",
       "image_alt_in_markdown": "Figure 39-1 Multi-channel schema for LAION-5B image-text candidate records",
-      "image_file": "docs/images/part12/ch43_01_laion_multichannel_schema_en.svg",
+      "image_file": "docs/images/part12/ch39_01_laion_multichannel_schema_en.svg",
       "image_exists": "yes",
       "image_dimensions": "2048x1152",
       "image_format": "svg",
@@ -2918,7 +2918,7 @@
       "figure_number": "39-2",
       "caption": "Figure 39-2 Image-text candidate-pool quality evaluation and closed-loop repair. Source: original illustration based on the LAION-5B paper and DataComp benchmark design",
       "image_alt_in_markdown": "Figure 39-2 Image-text candidate-pool quality evaluation and closed-loop repair",
-      "image_file": "docs/images/part12/ch43_02_laion_quality_datacomp_loop_en.svg",
+      "image_file": "docs/images/part12/ch39_02_laion_quality_datacomp_loop_en.svg",
       "image_exists": "yes",
       "image_dimensions": "2048x1152",
       "image_format": "svg",
@@ -2942,7 +2942,7 @@
       "figure_number": "40-1",
       "caption": "Figure 40-1: Schema-to-JSON mapping. Key fields and table structure become visible JSON nodes; constraints remain verifiable relationships attached to numeric fields",
       "image_alt_in_markdown": "Figure 40-1: Schema-to-JSON mapping",
-      "image_file": "docs/images/part12/ch38_01_schema_decomposition_en.png",
+      "image_file": "docs/images/part12/ch40_01_schema_decomposition_en.png",
       "image_exists": "yes",
       "image_dimensions": "2816x1536",
       "image_format": "png",
@@ -2966,7 +2966,7 @@
       "figure_number": "40-2",
       "caption": "Figure 40-2: StructBill-CN construction pipeline. Samples that fail logic validation return to annotation rather than entering the training set",
       "image_alt_in_markdown": "Figure 40-2: StructBill-CN construction pipeline",
-      "image_file": "docs/images/part12/ch38_02_dataset_construction_pipeline_en.png",
+      "image_file": "docs/images/part12/ch40_02_dataset_construction_pipeline_en.png",
       "image_exists": "yes",
       "image_dimensions": "2816x1536",
       "image_format": "png",
@@ -2990,7 +2990,7 @@
       "figure_number": "40-3",
       "caption": "Figure 40-3: Logic-consistency validation. The same gate is reused during construction to block inconsistent labels and during evaluation/training to score model output",
       "image_alt_in_markdown": "Figure 40-3: Logic-consistency validation",
-      "image_file": "docs/images/part12/ch38_03_structural_consistency_validation_en.png",
+      "image_file": "docs/images/part12/ch40_03_structural_consistency_validation_en.png",
       "image_exists": "yes",
       "image_dimensions": "2816x1536",
       "image_format": "png",
@@ -3011,12 +3011,12 @@
       "unit_title": "Chapter 40: Visual Document and Table Data Engineering: Structured Extraction, Sparse Tables, and Schema Constraints",
       "source_markdown": "docs/en/part12/ch40_visual_document_table_data_engineering.md",
       "line": 505,
-      "figure_number": "38-4",
+      "figure_number": "40-4",
       "caption": "From a data engineering perspective, the sample schema of STB includes at least the following fields and validation rules",
       "image_alt_in_markdown": "Figure 40-4: Three synchronized supervision signals in a table sample",
-      "image_file": "docs/images/part12/ch38_04_supervision_schema.png",
+      "image_file": "docs/images/part12/ch40_04_supervision_schema_en.png",
       "image_exists": "yes",
-      "image_dimensions": "1653x952",
+      "image_dimensions": "1653x951",
       "image_format": "png",
       "alt_text": "From a data engineering perspective, the sample schema of STB includes at least the following fields and validation rules.",
       "long_description": "Review against the figure and surrounding text in Chapter 40: Visual Document and Table Data Engineering: Structured Extraction, Sparse Tables, and Schema Constraints; expand if Springer requests a longer description for the visual relationships, axes, or sequence.",
@@ -3038,7 +3038,7 @@
       "figure_number": "40-5",
       "caption": "Figure 40-5: Four-stage SparseTable-Bench construction pipeline",
       "image_alt_in_markdown": "Figure 40-5: Four-stage SparseTable-Bench construction pipeline",
-      "image_file": "docs/images/part12/ch38_05_stb_pipeline.png",
+      "image_file": "docs/images/part12/ch40_05_stb_pipeline_en.png",
       "image_exists": "yes",
       "image_dimensions": "1672x941",
       "image_format": "png",
@@ -3059,10 +3059,10 @@
       "unit_title": "Chapter 40: Visual Document and Table Data Engineering: Structured Extraction, Sparse Tables, and Schema Constraints",
       "source_markdown": "docs/en/part12/ch40_visual_document_table_data_engineering.md",
       "line": 580,
-      "figure_number": "38-6",
+      "figure_number": "40-6",
       "caption": "The occlusion strategy of STB-Mask-Stress is column-aware. The workflow can be summarized as follows. 1. Parse the original table structure to obtain the row-column index, header/body membership, and bounding box of each cell. 2. Randomly select a subset of columns as occlusion candidates",
       "image_alt_in_markdown": "Figure 40-6: STB-Mask-Stress occlusion generation and evaluation workflow",
-      "image_file": "docs/images/part12/ch38_06_mask_stress_flow.png",
+      "image_file": "docs/images/part12/ch40_06_mask_stress_flow_en.png",
       "image_exists": "yes",
       "image_dimensions": "1672x941",
       "image_format": "png",
@@ -3086,7 +3086,7 @@
       "figure_number": "41-1",
       "caption": "Figure 41-1. Distribution of domain coverage in the Multi-Chart Infographic Reasoning Dataset, spanning 28 fine-grained domains",
       "image_alt_in_markdown": "Figure 41-1: Domain distribution in the multi-chart infographic reasoning dataset",
-      "image_file": "docs/images/part12/ch39_01_domain_distribution_en.png",
+      "image_file": "docs/images/part12/ch41_01_domain_distribution_en.png",
       "image_exists": "yes",
       "image_dimensions": "6102x4601",
       "image_format": "png",
@@ -3110,7 +3110,7 @@
       "figure_number": "41-2",
       "caption": "Figure 41-2. Distribution of sub-chart types in the Multi-Chart Infographic Reasoning Dataset, covering 23 distinct chart categories",
       "image_alt_in_markdown": "Figure 41-2: Chart type distribution",
-      "image_file": "docs/images/part12/ch39_02_chart_type_distribution_en.png",
+      "image_file": "docs/images/part12/ch41_02_chart_type_distribution_en.png",
       "image_exists": "yes",
       "image_dimensions": "5940x4602",
       "image_format": "png",
@@ -3134,7 +3134,7 @@
       "figure_number": "41-3",
       "caption": "Figure 41-3. Distribution of sub-question types in the Multi-Chart Infographic Reasoning Dataset, comprising 13 question categories",
       "image_alt_in_markdown": "Figure 41-3: Question type distribution",
-      "image_file": "docs/images/part12/ch39_03_question_type_distribution_en.png",
+      "image_file": "docs/images/part12/ch41_03_question_type_distribution_en.png",
       "image_exists": "yes",
       "image_dimensions": "5583x4690",
       "image_format": "png",
@@ -3154,22 +3154,22 @@
       "unit": "Ch41",
       "unit_title": "Chapter 41: Visual Reasoning Data Engineering: Chart Evidence, Medical Images, and Tool-Call Trajectories",
       "source_markdown": "docs/en/part12/ch41_visual_reasoning_tool_data_engineering.md",
-      "line": 104,
+      "line": 105,
       "figure_number": "41-4",
-      "caption": "Figure 41-4. Example of a multi-chart infographic sample from the dataset (Shark Attacks), consisting of four distinct subcharts covering three categories of statistics: historical shark-attack county ranking in the United States, state-level shark attacks in the last ten years, and average annual accidental deaths in the United States",
-      "image_alt_in_markdown": "Figure 41-4: Shark-attack compound infographic example",
-      "image_file": "docs/images/part12/ch39_04_shark_attack_infographic.jpg",
+      "caption": "Shark-attack infographic subfigure 1 showing historical U.S. county rankings",
+      "image_alt_in_markdown": "Shark-attack infographic subfigure 1 showing historical U.S. county rankings",
+      "image_file": "docs/images/part12/ch41_04_shark_attack_infographic_1.jpg",
       "image_exists": "yes",
-      "image_dimensions": "800x4073",
+      "image_dimensions": "800x982",
       "image_format": "jpg",
-      "alt_text": ". Example of a multi-chart infographic sample from the dataset (Shark Attacks), consisting of four distinct subcharts covering three categories of statistics: historical shark-attack county ranking in the United States, state-level shark attacks in the last ten years, and average annual accidental deaths in the United States.",
+      "alt_text": "Shark-attack infographic subfigure 1 showing historical U.S. county rankings.",
       "long_description": "",
       "decorative": "no",
       "review_status": "Draft",
       "reviewer": "",
       "notes": "",
-      "zh_reference_caption": "Figure 41-4：多图表信息图样本（鲨鱼袭击）。该信息图包含四个独立子图，内容涉及美国历史累计鲨鱼袭击县域排行榜、美国近 10 年各州鲨鱼袭击汇总统计、全美年均意外死亡人数统计",
-      "zh_reference_alt_text": "图41-4：多图表信息图样本（鲨鱼袭击）"
+      "zh_reference_caption": "图41-4子图1：鲨鱼袭击信息图中的美国历史县域排行部分",
+      "zh_reference_alt_text": "图41-4子图1：鲨鱼袭击信息图中的美国历史县域排行部分"
     },
     {
       "row_id": "ALT-0133",
@@ -3178,11 +3178,83 @@
       "unit": "Ch41",
       "unit_title": "Chapter 41: Visual Reasoning Data Engineering: Chart Evidence, Medical Images, and Tool-Call Trajectories",
       "source_markdown": "docs/en/part12/ch41_visual_reasoning_tool_data_engineering.md",
-      "line": 150,
+      "line": 106,
+      "figure_number": "41-4",
+      "caption": "Shark-attack infographic subfigure 2 showing state-level attacks in the last ten years",
+      "image_alt_in_markdown": "Shark-attack infographic subfigure 2 showing state-level attacks in the last ten years",
+      "image_file": "docs/images/part12/ch41_04_shark_attack_infographic_2.jpg",
+      "image_exists": "yes",
+      "image_dimensions": "800x719",
+      "image_format": "jpg",
+      "alt_text": "Shark-attack infographic subfigure 2 showing state-level attacks in the last ten years.",
+      "long_description": "",
+      "decorative": "no",
+      "review_status": "Draft",
+      "reviewer": "",
+      "notes": "",
+      "zh_reference_caption": "图41-4子图2：鲨鱼袭击信息图中的近十年州级袭击统计部分",
+      "zh_reference_alt_text": "图41-4子图2：鲨鱼袭击信息图中的近十年州级袭击统计部分"
+    },
+    {
+      "row_id": "ALT-0134",
+      "language": "en",
+      "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
+      "unit": "Ch41",
+      "unit_title": "Chapter 41: Visual Reasoning Data Engineering: Chart Evidence, Medical Images, and Tool-Call Trajectories",
+      "source_markdown": "docs/en/part12/ch41_visual_reasoning_tool_data_engineering.md",
+      "line": 107,
+      "figure_number": "41-4",
+      "caption": "Shark-attack infographic subfigure 3 showing fatal attack annotation and related context",
+      "image_alt_in_markdown": "Shark-attack infographic subfigure 3 showing fatal attack annotation and related context",
+      "image_file": "docs/images/part12/ch41_04_shark_attack_infographic_3.jpg",
+      "image_exists": "yes",
+      "image_dimensions": "800x1276",
+      "image_format": "jpg",
+      "alt_text": "Shark-attack infographic subfigure 3 showing fatal attack annotation and related context.",
+      "long_description": "",
+      "decorative": "no",
+      "review_status": "Draft",
+      "reviewer": "",
+      "notes": "",
+      "zh_reference_caption": "图41-4子图3：鲨鱼袭击信息图中的致命袭击备注与上下文部分",
+      "zh_reference_alt_text": "图41-4子图3：鲨鱼袭击信息图中的致命袭击备注与上下文部分"
+    },
+    {
+      "row_id": "ALT-0135",
+      "language": "en",
+      "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
+      "unit": "Ch41",
+      "unit_title": "Chapter 41: Visual Reasoning Data Engineering: Chart Evidence, Medical Images, and Tool-Call Trajectories",
+      "source_markdown": "docs/en/part12/ch41_visual_reasoning_tool_data_engineering.md",
+      "line": 108,
+      "figure_number": "41-4",
+      "caption": "</div Figure 41-4. Example of a multi-chart infographic sample from the dataset (Shark Attacks), consisting of four distinct subcharts covering three categories of statistics: historical shark-attack county ranking in the United States, state-level shark attacks in the last ten years, and average annual accidental deaths in the United States. The original figure is vertically elongated and hard to read as a whole; it is thus divided into horizontally aligned subfigures",
+      "image_alt_in_markdown": "Shark-attack infographic subfigure 4 comparing average annual accidental deaths",
+      "image_file": "docs/images/part12/ch41_04_shark_attack_infographic_4.jpg",
+      "image_exists": "yes",
+      "image_dimensions": "800x1067",
+      "image_format": "jpg",
+      "alt_text": "</div Figure 41-4. Example of a multi-chart infographic sample from the dataset (Shark Attacks), consisting of four distinct subcharts covering three categories of statistics: historical shark-attack county ranking in the United States, state-level shark attacks in the last ten years, and average annual accidental deaths in the United States. The original figure is vertically elongated and hard to read as a whole; it is thus divided into horizontally aligned subfigures.",
+      "long_description": "",
+      "decorative": "no",
+      "review_status": "Draft",
+      "reviewer": "",
+      "notes": "",
+      "zh_reference_caption": "</div 图 41-4：多图表信息图样本（鲨鱼袭击）。该信息图包含四个独立子图，内容涉及美国历史累计鲨鱼袭击县域排行榜、美国近 10 年各州鲨鱼袭击汇总统计、全美年均意外死亡人数统计。原图纵向幅面远大于横向幅面，直接呈现可读性不佳，故拆解为多张子图横向排布展示",
+      "zh_reference_alt_text": "图41-4子图4：鲨鱼袭击信息图中的年均意外死亡对比部分"
+    },
+    {
+      "row_id": "ALT-0136",
+      "language": "en",
+      "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
+      "unit": "Ch41",
+      "unit_title": "Chapter 41: Visual Reasoning Data Engineering: Chart Evidence, Medical Images, and Tool-Call Trajectories",
+      "source_markdown": "docs/en/part12/ch41_visual_reasoning_tool_data_engineering.md",
+      "line": 155,
       "figure_number": "41-5",
       "caption": "Figure 41-5. Overview of the four-stage data construction pipeline for the Multi-Chart Infographic Reasoning Dataset: collecting and filtering real compound infographics, manually partitioning subchart regions, designing layered question chains, and cross-checking answers",
       "image_alt_in_markdown": "Figure 41-5: Multi-chart infographic dataset construction pipeline",
-      "image_file": "docs/images/part12/ch39_05_multichart_dataset_pipeline_en.png",
+      "image_file": "docs/images/part12/ch41_05_multichart_dataset_pipeline_en.png",
       "image_exists": "yes",
       "image_dimensions": "2158x1648",
       "image_format": "png",
@@ -3196,17 +3268,17 @@
       "zh_reference_alt_text": "图41-5：多图标信息图推理数据集四阶段构建流水线图"
     },
     {
-      "row_id": "ALT-0134",
+      "row_id": "ALT-0137",
       "language": "en",
       "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
       "unit": "Ch41",
       "unit_title": "Chapter 41: Visual Reasoning Data Engineering: Chart Evidence, Medical Images, and Tool-Call Trajectories",
       "source_markdown": "docs/en/part12/ch41_visual_reasoning_tool_data_engineering.md",
-      "line": 442,
+      "line": 447,
       "figure_number": "41-6",
       "caption": "Figure 41-6: Conceptual construction flow for MedImage-ToolVQA. The key point is not script order, but how the evidence chain and behavior chain are preserved across stages",
       "image_alt_in_markdown": "Figure 41-6: MedImage-ToolVQA conceptual construction flow",
-      "image_file": "docs/images/part12/ch41_02_medimage_tool_vqa_pipeline_en.svg",
+      "image_file": "docs/images/part12/ch41_06_medimage_tool_vqa_pipeline_en.svg",
       "image_exists": "yes",
       "image_dimensions": "2200x1050",
       "image_format": "svg",
@@ -3220,17 +3292,17 @@
       "zh_reference_alt_text": "图41-6：MedImage-ToolVQA 数据构建概念流程"
     },
     {
-      "row_id": "ALT-0135",
+      "row_id": "ALT-0138",
       "language": "en",
       "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
       "unit": "Ch41",
       "unit_title": "Chapter 41: Visual Reasoning Data Engineering: Chart Evidence, Medical Images, and Tool-Call Trajectories",
       "source_markdown": "docs/en/part12/ch41_visual_reasoning_tool_data_engineering.md",
-      "line": 484,
+      "line": 489,
       "figure_number": "41-7",
       "caption": "Figure 41-7: Multi-turn structure of a tool-call trajectory. Tool observations return as new image inputs; the model must continue reasoning from the observation image rather than merely produce a formally correct call",
       "image_alt_in_markdown": "Figure 41-7: Multi-turn structure of tool-call trajectories",
-      "image_file": "docs/images/part12/ch41_03_tool_trajectory_structure_en.svg",
+      "image_file": "docs/images/part12/ch41_07_tool_trajectory_structure_en.svg",
       "image_exists": "yes",
       "image_dimensions": "1900x1120",
       "image_format": "svg",
@@ -3244,17 +3316,17 @@
       "zh_reference_alt_text": "图41-7：工具调用多轮轨迹结构"
     },
     {
-      "row_id": "ALT-0136",
+      "row_id": "ALT-0139",
       "language": "en",
       "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
       "unit": "Ch41",
       "unit_title": "Chapter 41: Visual Reasoning Data Engineering: Chart Evidence, Medical Images, and Tool-Call Trajectories",
       "source_markdown": "docs/en/part12/ch41_visual_reasoning_tool_data_engineering.md",
-      "line": 561,
+      "line": 566,
       "figure_number": "41-8",
       "caption": "Figure 41-8: Bbox is a structured field and should be recoverable as reviewable visual evidence",
       "image_alt_in_markdown": "Figure 41-8: Real image and bbox evidence in the SFT schema",
-      "image_file": "docs/images/part12/ch41_05_sft_schema_real_bbox_example_en.svg",
+      "image_file": "docs/images/part12/ch41_08_sft_schema_real_bbox_example_en.svg",
       "image_exists": "yes",
       "image_dimensions": "2100x980",
       "image_format": "svg",
@@ -3268,17 +3340,17 @@
       "zh_reference_alt_text": "图41-8：SFT schema 中的真实图像与 bbox 证据"
     },
     {
-      "row_id": "ALT-0137",
+      "row_id": "ALT-0140",
       "language": "en",
       "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
       "unit": "Ch41",
       "unit_title": "Chapter 41: Visual Reasoning Data Engineering: Chart Evidence, Medical Images, and Tool-Call Trajectories",
       "source_markdown": "docs/en/part12/ch41_visual_reasoning_tool_data_engineering.md",
-      "line": 696,
+      "line": 701,
       "figure_number": "41-9",
       "caption": "Figure 41-9: Quality-control and human-review gates. Medical image tool-use data needs to check answer, evidence, and behavior together; automated validation and human review should complement each other",
       "image_alt_in_markdown": "Figure 41-9: Quality-control and human-review gates",
-      "image_file": "docs/images/part12/ch41_04_quality_review_gate_en.svg",
+      "image_file": "docs/images/part12/ch41_09_quality_review_gate_en.svg",
       "image_exists": "yes",
       "image_dimensions": "2000x1120",
       "image_format": "svg",
@@ -3292,7 +3364,7 @@
       "zh_reference_alt_text": "图41-9：质量控制与人工复核门禁"
     },
     {
-      "row_id": "ALT-0138",
+      "row_id": "ALT-0141",
       "language": "en",
       "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
       "unit": "Ch42",
@@ -3302,7 +3374,7 @@
       "figure_number": "42-1",
       "caption": "Figure 42-1: Dual-channel schema for semantic response and style control. The semantic channel answers \"what to say,\" the style channel answers \"with which voice and emotion to say it,\" and the acoustic supervision channel binds both to audio files, speech tokens, and sampling configuration",
       "image_alt_in_markdown": "Figure 42-1: Dual-channel schema for semantic response and style control",
-      "image_file": "docs/images/part12/ch42_fig02_dual_channel_schema.svg",
+      "image_file": "docs/images/part12/ch42_01_dual_channel_schema_en.svg",
       "image_exists": "yes",
       "image_dimensions": "1280x560",
       "image_format": "svg",
@@ -3316,7 +3388,7 @@
       "zh_reference_alt_text": "图42-1：语义响应与风格控制双通道 schema"
     },
     {
-      "row_id": "ALT-0139",
+      "row_id": "ALT-0142",
       "language": "en",
       "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
       "unit": "Ch42",
@@ -3326,7 +3398,7 @@
       "figure_number": "42-2",
       "caption": "Figure 42-2: VoiceStyleControl data construction pipeline. Text conversation or style content is first assigned speaker and emotion conditions, then audio is generated or collected through the authorized reference voice pool, and finally the samples are tokenized, quality-checked, balanced, and packaged",
       "image_alt_in_markdown": "Figure 42-2: VoiceStyleControl data construction pipeline",
-      "image_file": "docs/images/part12/ch42_fig01_data_pipeline.svg",
+      "image_file": "docs/images/part12/ch42_02_voice_style_data_pipeline_en.svg",
       "image_exists": "yes",
       "image_dimensions": "1320x380",
       "image_format": "svg",
@@ -3340,7 +3412,7 @@
       "zh_reference_alt_text": "图42-2：VoiceStyleControl 数据构建流水线"
     },
     {
-      "row_id": "ALT-0140",
+      "row_id": "ALT-0143",
       "language": "en",
       "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
       "unit": "Ch42",
@@ -3350,7 +3422,7 @@
       "figure_number": "42-3",
       "caption": "Figure 42-3: Quality assessment and data flywheel closed loop. Automated validation, reverse ASR, style assessment, and manual sampling together form a defective-sample queue that feeds back into re-synthesis, re-annotation, downweighting, or removal",
       "image_alt_in_markdown": "Figure 42-3: Quality assessment and data flywheel closed loop",
-      "image_file": "docs/images/part12/ch42_fig03_quality_loop.svg",
+      "image_file": "docs/images/part12/ch42_03_quality_loop_en.svg",
       "image_exists": "yes",
       "image_dimensions": "1120x430",
       "image_format": "svg",
@@ -3364,7 +3436,7 @@
       "zh_reference_alt_text": "图42-3：质量评估与数据飞轮闭环"
     },
     {
-      "row_id": "ALT-0141",
+      "row_id": "ALT-0144",
       "language": "en",
       "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
       "unit": "Ch43",
@@ -3374,7 +3446,7 @@
       "figure_number": "43-1",
       "caption": "Figure 43-1: Latent-Switch-69K distills reasoning traces from Dolci-Think-SFT-32B into solution intuitions, compressed CoT, latent budgets, student sequences, and mask-aligned SFT records",
       "image_alt_in_markdown": "Figure 43-1: Latent-Switch-69K Construction Pipeline",
-      "image_file": "docs/images/part12/ch43_latent_switch_pipeline.svg",
+      "image_file": "docs/images/part12/ch43_01_latent_switch_pipeline.svg",
       "image_exists": "yes",
       "image_dimensions": "1502.114x436.48425",
       "image_format": "svg",
@@ -3388,7 +3460,7 @@
       "zh_reference_alt_text": "图43-1：Latent-Switch-69K 构建流水线图"
     },
     {
-      "row_id": "ALT-0142",
+      "row_id": "ALT-0145",
       "language": "en",
       "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
       "unit": "Ch43",
@@ -3398,7 +3470,7 @@
       "figure_number": "43-2",
       "caption": "Figure 43-2: The final training set contains 69,745 samples; mathematics, code, and precise instruction-following data account for a large share",
       "image_alt_in_markdown": "Figure 43-2: Latent-Switch-69K Data Sources and Domain Composition",
-      "image_file": "docs/images/part12/ch40_05_dataset_composition.png",
+      "image_file": "docs/images/part12/ch43_02_dataset_composition.png",
       "image_exists": "yes",
       "image_dimensions": "2304x1052",
       "image_format": "png",
@@ -3412,7 +3484,7 @@
       "zh_reference_alt_text": "图43-2：Latent-Switch-69K 数据来源与领域组成"
     },
     {
-      "row_id": "ALT-0143",
+      "row_id": "ALT-0146",
       "language": "en",
       "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
       "unit": "Ch43",
@@ -3422,7 +3494,7 @@
       "figure_number": "43-3",
       "caption": "Figure 43-3: The extensive visible reasoning in the source trace is split into two types of signal: solution intuition is used to estimate the latent budget, and the compressed CoT is used for explicit verification and answer supervision",
       "image_alt_in_markdown": "Figure 43-3: Comparison of Original CoT, Compressed CoT, and Latent Placeholders",
-      "image_file": "docs/images/part12/ch43_cot_latent_comparison.svg",
+      "image_file": "docs/images/part12/ch43_03_cot_latent_comparison.svg",
       "image_exists": "yes",
       "image_dimensions": "1342.4434x565.25885",
       "image_format": "svg",
@@ -3436,7 +3508,7 @@
       "zh_reference_alt_text": "图43-3：原始 CoT、压缩 CoT 与 latent placeholder 对比"
     },
     {
-      "row_id": "ALT-0144",
+      "row_id": "ALT-0147",
       "language": "en",
       "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
       "unit": "Ch43",
@@ -3446,7 +3518,7 @@
       "figure_number": "43-4",
       "caption": "Figure 43-4: This figure shows the distributions of source CoT length, distilled CoT length, intuition length, ground truth length, and compression ratio",
       "image_alt_in_markdown": "Figure 43-4: Distributions of Original and Distilled Reasoning Length and Compression Ratio",
-      "image_file": "docs/images/part12/ch40_07_token_compression_distribution.png",
+      "image_file": "docs/images/part12/ch43_04_token_compression_distribution.png",
       "image_exists": "yes",
       "image_dimensions": "2304x422",
       "image_format": "png",
@@ -3460,7 +3532,7 @@
       "zh_reference_alt_text": "图43-4：原始与蒸馏后推理长度及压缩率统计"
     },
     {
-      "row_id": "ALT-0145",
+      "row_id": "ALT-0148",
       "language": "en",
       "part": "Part 12: Specialized Datasets and Multimodal Data Engineering Practice",
       "unit": "Ch43",
@@ -3470,7 +3542,7 @@
       "figure_number": "43-5",
       "caption": "Figure 43-5: Prompt and latent interior tokens are masked from ordinary CE; latent boundaries, explicit CoT, answers, and end tokens are controlled by different weights and masks",
       "image_alt_in_markdown": "Figure 43-5: Supervision Mask Schematic",
-      "image_file": "docs/images/part12/ch43_supervision_mask.svg",
+      "image_file": "docs/images/part12/ch43_05_supervision_mask.svg",
       "image_exists": "yes",
       "image_dimensions": "1473.5x791.87109",
       "image_format": "svg",
@@ -3484,7 +3556,7 @@
       "zh_reference_alt_text": "图43-5：Supervision mask 示意图"
     },
     {
-      "row_id": "ALT-0146",
+      "row_id": "ALT-0149",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch44",
@@ -3508,7 +3580,7 @@
       "zh_reference_alt_text": "图44-1：数据配方漏斗 (Data Recipe Funnel)"
     },
     {
-      "row_id": "ALT-0147",
+      "row_id": "ALT-0150",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch44",
@@ -3532,7 +3604,7 @@
       "zh_reference_alt_text": "图44-2：大模型数据透明度光谱 (Data Transparency Spectrum)"
     },
     {
-      "row_id": "ALT-0148",
+      "row_id": "ALT-0151",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch44",
@@ -3556,7 +3628,7 @@
       "zh_reference_alt_text": "图44-3：预训练数据源分层地图"
     },
     {
-      "row_id": "ALT-0149",
+      "row_id": "ALT-0152",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch44",
@@ -3580,7 +3652,7 @@
       "zh_reference_alt_text": "图44-4：三模型数据组成饼图对比 (Estimated Data Mixture Ratios)"
     },
     {
-      "row_id": "ALT-0150",
+      "row_id": "ALT-0153",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch44",
@@ -3604,7 +3676,7 @@
       "zh_reference_alt_text": "图44-5：Llama-3 退火期数据组成时间轴 (Curriculum Learning Schedule)"
     },
     {
-      "row_id": "ALT-0151",
+      "row_id": "ALT-0154",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch45",
@@ -3628,7 +3700,7 @@
       "zh_reference_alt_text": "图45-1：LLM 后训练三阶段流水线示意图"
     },
     {
-      "row_id": "ALT-0152",
+      "row_id": "ALT-0155",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch45",
@@ -3652,7 +3724,7 @@
       "zh_reference_alt_text": "图45-2：Self-Instruct、Evol-Instruct 与 Magpie 三流派 pipeline 对比"
     },
     {
-      "row_id": "ALT-0153",
+      "row_id": "ALT-0156",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch45",
@@ -3676,7 +3748,7 @@
       "zh_reference_alt_text": "图45-3：Tülu-3 三阶段数据流与规模示意"
     },
     {
-      "row_id": "ALT-0154",
+      "row_id": "ALT-0157",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch46",
@@ -3700,7 +3772,7 @@
       "zh_reference_alt_text": "图46-1：R1 风格推理数据飞轮四阶段"
     },
     {
-      "row_id": "ALT-0155",
+      "row_id": "ALT-0158",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch46",
@@ -3724,7 +3796,7 @@
       "zh_reference_alt_text": "图46-2：推理数据奖励信号与验证器结构"
     },
     {
-      "row_id": "ALT-0156",
+      "row_id": "ALT-0159",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch46",
@@ -3748,7 +3820,7 @@
       "zh_reference_alt_text": "图46-3：Long-CoT 数据样例剖面"
     },
     {
-      "row_id": "ALT-0157",
+      "row_id": "ALT-0160",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch47",
@@ -3772,7 +3844,7 @@
       "zh_reference_alt_text": "图47-1：多模态数据工程全景图"
     },
     {
-      "row_id": "ALT-0158",
+      "row_id": "ALT-0161",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch47",
@@ -3796,7 +3868,7 @@
       "zh_reference_alt_text": "图47-2：VLM 数据三阶段流水线 (3-Stage VLM Data Engineering Pipeline)"
     },
     {
-      "row_id": "ALT-0159",
+      "row_id": "ALT-0162",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch47",
@@ -3820,7 +3892,7 @@
       "zh_reference_alt_text": "图47-3：Native vs Dynamic Resolution 数据 pipeline 对比 (Resolution Handling)"
     },
     {
-      "row_id": "ALT-0160",
+      "row_id": "ALT-0163",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch47",
@@ -3844,7 +3916,7 @@
       "zh_reference_alt_text": "图47-4：多模态指令合成 pipeline (Multi-modal Instruction Synthesis)"
     },
     {
-      "row_id": "ALT-0161",
+      "row_id": "ALT-0164",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch48",
@@ -3868,7 +3940,7 @@
       "zh_reference_alt_text": "图48-1：T2I 数据流水线"
     },
     {
-      "row_id": "ALT-0162",
+      "row_id": "ALT-0165",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch48",
@@ -3892,7 +3964,7 @@
       "zh_reference_alt_text": "图48-2：T2V 数据流水线"
     },
     {
-      "row_id": "ALT-0163",
+      "row_id": "ALT-0166",
       "language": "en",
       "part": "Part 13: Open-source LLM Data Engineering Recipes and Paradigms",
       "unit": "Ch48",
@@ -3916,7 +3988,7 @@
       "zh_reference_alt_text": "图48-3：美学/版权/安全多级过滤架构"
     },
     {
-      "row_id": "ALT-0164",
+      "row_id": "ALT-0167",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P01",
@@ -3940,7 +4012,7 @@
       "zh_reference_alt_text": "图 P01-1"
     },
     {
-      "row_id": "ALT-0165",
+      "row_id": "ALT-0168",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P01",
@@ -3964,7 +4036,7 @@
       "zh_reference_alt_text": "图 P01-2"
     },
     {
-      "row_id": "ALT-0166",
+      "row_id": "ALT-0169",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P01",
@@ -3988,7 +4060,7 @@
       "zh_reference_alt_text": "图 P01-3"
     },
     {
-      "row_id": "ALT-0167",
+      "row_id": "ALT-0170",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P01",
@@ -4012,7 +4084,7 @@
       "zh_reference_alt_text": "图 P01-4"
     },
     {
-      "row_id": "ALT-0168",
+      "row_id": "ALT-0171",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P01",
@@ -4036,7 +4108,7 @@
       "zh_reference_alt_text": "图 P01-5"
     },
     {
-      "row_id": "ALT-0169",
+      "row_id": "ALT-0172",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P01",
@@ -4060,7 +4132,7 @@
       "zh_reference_alt_text": "图 P01-6"
     },
     {
-      "row_id": "ALT-0170",
+      "row_id": "ALT-0173",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P01",
@@ -4084,7 +4156,7 @@
       "zh_reference_alt_text": "图 P01-7"
     },
     {
-      "row_id": "ALT-0171",
+      "row_id": "ALT-0174",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P01",
@@ -4108,7 +4180,7 @@
       "zh_reference_alt_text": "图 P01-8"
     },
     {
-      "row_id": "ALT-0172",
+      "row_id": "ALT-0175",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P01",
@@ -4132,7 +4204,7 @@
       "zh_reference_alt_text": "图 P01-9"
     },
     {
-      "row_id": "ALT-0173",
+      "row_id": "ALT-0176",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P01",
@@ -4156,7 +4228,7 @@
       "zh_reference_alt_text": "图 P01-10"
     },
     {
-      "row_id": "ALT-0174",
+      "row_id": "ALT-0177",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P01",
@@ -4180,7 +4252,7 @@
       "zh_reference_alt_text": "图 P01-11"
     },
     {
-      "row_id": "ALT-0175",
+      "row_id": "ALT-0178",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4204,7 +4276,7 @@
       "zh_reference_alt_text": "图 P02-1"
     },
     {
-      "row_id": "ALT-0176",
+      "row_id": "ALT-0179",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4228,7 +4300,7 @@
       "zh_reference_alt_text": "图 P02-2"
     },
     {
-      "row_id": "ALT-0177",
+      "row_id": "ALT-0180",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4252,7 +4324,7 @@
       "zh_reference_alt_text": "图 P02-3"
     },
     {
-      "row_id": "ALT-0178",
+      "row_id": "ALT-0181",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4276,7 +4348,7 @@
       "zh_reference_alt_text": "图 P02-4"
     },
     {
-      "row_id": "ALT-0179",
+      "row_id": "ALT-0182",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4300,7 +4372,7 @@
       "zh_reference_alt_text": "图 P02-5"
     },
     {
-      "row_id": "ALT-0180",
+      "row_id": "ALT-0183",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4324,7 +4396,7 @@
       "zh_reference_alt_text": "图 P02-6"
     },
     {
-      "row_id": "ALT-0181",
+      "row_id": "ALT-0184",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4348,7 +4420,7 @@
       "zh_reference_alt_text": "图 P02-7"
     },
     {
-      "row_id": "ALT-0182",
+      "row_id": "ALT-0185",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4372,7 +4444,7 @@
       "zh_reference_alt_text": "图 P02-8"
     },
     {
-      "row_id": "ALT-0183",
+      "row_id": "ALT-0186",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4396,7 +4468,7 @@
       "zh_reference_alt_text": "图 P02-9"
     },
     {
-      "row_id": "ALT-0184",
+      "row_id": "ALT-0187",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4420,7 +4492,7 @@
       "zh_reference_alt_text": "图 P02-10"
     },
     {
-      "row_id": "ALT-0185",
+      "row_id": "ALT-0188",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4444,7 +4516,7 @@
       "zh_reference_alt_text": "图 P02-11"
     },
     {
-      "row_id": "ALT-0186",
+      "row_id": "ALT-0189",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4468,7 +4540,7 @@
       "zh_reference_alt_text": "图 P02-12"
     },
     {
-      "row_id": "ALT-0187",
+      "row_id": "ALT-0190",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4492,7 +4564,7 @@
       "zh_reference_alt_text": "图 P02-13"
     },
     {
-      "row_id": "ALT-0188",
+      "row_id": "ALT-0191",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4516,7 +4588,7 @@
       "zh_reference_alt_text": "图 P02-14"
     },
     {
-      "row_id": "ALT-0189",
+      "row_id": "ALT-0192",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4540,7 +4612,7 @@
       "zh_reference_alt_text": "图 P02-15"
     },
     {
-      "row_id": "ALT-0190",
+      "row_id": "ALT-0193",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4564,7 +4636,7 @@
       "zh_reference_alt_text": "图 P02-16"
     },
     {
-      "row_id": "ALT-0191",
+      "row_id": "ALT-0194",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4588,7 +4660,7 @@
       "zh_reference_alt_text": "图 P02-17"
     },
     {
-      "row_id": "ALT-0192",
+      "row_id": "ALT-0195",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4612,7 +4684,7 @@
       "zh_reference_alt_text": "图 P02-18"
     },
     {
-      "row_id": "ALT-0193",
+      "row_id": "ALT-0196",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4636,7 +4708,7 @@
       "zh_reference_alt_text": "图 P02-19"
     },
     {
-      "row_id": "ALT-0194",
+      "row_id": "ALT-0197",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P02",
@@ -4660,7 +4732,7 @@
       "zh_reference_alt_text": "图 P02-20"
     },
     {
-      "row_id": "ALT-0195",
+      "row_id": "ALT-0198",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P03",
@@ -4684,7 +4756,7 @@
       "zh_reference_alt_text": "图 P03-1"
     },
     {
-      "row_id": "ALT-0196",
+      "row_id": "ALT-0199",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P03",
@@ -4708,7 +4780,7 @@
       "zh_reference_alt_text": "图 P03-2"
     },
     {
-      "row_id": "ALT-0197",
+      "row_id": "ALT-0200",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P03",
@@ -4732,7 +4804,7 @@
       "zh_reference_alt_text": "图 P03-3"
     },
     {
-      "row_id": "ALT-0198",
+      "row_id": "ALT-0201",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P03",
@@ -4756,7 +4828,7 @@
       "zh_reference_alt_text": "图 P03-4"
     },
     {
-      "row_id": "ALT-0199",
+      "row_id": "ALT-0202",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P03",
@@ -4780,7 +4852,7 @@
       "zh_reference_alt_text": "图 P03-5"
     },
     {
-      "row_id": "ALT-0200",
+      "row_id": "ALT-0203",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P03",
@@ -4804,7 +4876,7 @@
       "zh_reference_alt_text": "图 P03-6"
     },
     {
-      "row_id": "ALT-0201",
+      "row_id": "ALT-0204",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P03",
@@ -4828,7 +4900,7 @@
       "zh_reference_alt_text": "图 P03-7"
     },
     {
-      "row_id": "ALT-0202",
+      "row_id": "ALT-0205",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P03",
@@ -4852,7 +4924,7 @@
       "zh_reference_alt_text": "图 P03-8"
     },
     {
-      "row_id": "ALT-0203",
+      "row_id": "ALT-0206",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P04",
@@ -4876,7 +4948,7 @@
       "zh_reference_alt_text": "图 P04-1"
     },
     {
-      "row_id": "ALT-0204",
+      "row_id": "ALT-0207",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P04",
@@ -4900,7 +4972,7 @@
       "zh_reference_alt_text": "图 P04-2"
     },
     {
-      "row_id": "ALT-0205",
+      "row_id": "ALT-0208",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P04",
@@ -4924,7 +4996,7 @@
       "zh_reference_alt_text": "图 P04-3"
     },
     {
-      "row_id": "ALT-0206",
+      "row_id": "ALT-0209",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P04",
@@ -4948,7 +5020,7 @@
       "zh_reference_alt_text": "图 P04-4"
     },
     {
-      "row_id": "ALT-0207",
+      "row_id": "ALT-0210",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P04",
@@ -4972,7 +5044,7 @@
       "zh_reference_alt_text": "图 P04-5"
     },
     {
-      "row_id": "ALT-0208",
+      "row_id": "ALT-0211",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P04",
@@ -4996,7 +5068,7 @@
       "zh_reference_alt_text": "图 P04-6"
     },
     {
-      "row_id": "ALT-0209",
+      "row_id": "ALT-0212",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P04",
@@ -5020,7 +5092,7 @@
       "zh_reference_alt_text": "图 P04-7"
     },
     {
-      "row_id": "ALT-0210",
+      "row_id": "ALT-0213",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P04",
@@ -5044,7 +5116,7 @@
       "zh_reference_alt_text": "图 P04-8"
     },
     {
-      "row_id": "ALT-0211",
+      "row_id": "ALT-0214",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P04",
@@ -5068,7 +5140,7 @@
       "zh_reference_alt_text": "图 P04-9"
     },
     {
-      "row_id": "ALT-0212",
+      "row_id": "ALT-0215",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P04",
@@ -5092,7 +5164,7 @@
       "zh_reference_alt_text": "图 P04-10"
     },
     {
-      "row_id": "ALT-0213",
+      "row_id": "ALT-0216",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P04",
@@ -5116,7 +5188,7 @@
       "zh_reference_alt_text": "图 P04-11"
     },
     {
-      "row_id": "ALT-0214",
+      "row_id": "ALT-0217",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P05",
@@ -5140,7 +5212,7 @@
       "zh_reference_alt_text": "图 P05-1"
     },
     {
-      "row_id": "ALT-0215",
+      "row_id": "ALT-0218",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P05",
@@ -5164,7 +5236,7 @@
       "zh_reference_alt_text": "图 P05-2"
     },
     {
-      "row_id": "ALT-0216",
+      "row_id": "ALT-0219",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P05",
@@ -5188,7 +5260,7 @@
       "zh_reference_alt_text": "图 P05-3"
     },
     {
-      "row_id": "ALT-0217",
+      "row_id": "ALT-0220",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P05",
@@ -5212,7 +5284,7 @@
       "zh_reference_alt_text": "图 P05-4"
     },
     {
-      "row_id": "ALT-0218",
+      "row_id": "ALT-0221",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P05",
@@ -5236,7 +5308,7 @@
       "zh_reference_alt_text": "图 P05-5"
     },
     {
-      "row_id": "ALT-0219",
+      "row_id": "ALT-0222",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P05",
@@ -5260,7 +5332,7 @@
       "zh_reference_alt_text": "图 P05-6"
     },
     {
-      "row_id": "ALT-0220",
+      "row_id": "ALT-0223",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P05",
@@ -5284,7 +5356,7 @@
       "zh_reference_alt_text": "图 P05-7"
     },
     {
-      "row_id": "ALT-0221",
+      "row_id": "ALT-0224",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P05",
@@ -5308,7 +5380,7 @@
       "zh_reference_alt_text": "图 P05-8"
     },
     {
-      "row_id": "ALT-0222",
+      "row_id": "ALT-0225",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P05",
@@ -5332,7 +5404,7 @@
       "zh_reference_alt_text": "图 P05-9"
     },
     {
-      "row_id": "ALT-0223",
+      "row_id": "ALT-0226",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P06",
@@ -5356,7 +5428,7 @@
       "zh_reference_alt_text": "图 P06-1"
     },
     {
-      "row_id": "ALT-0224",
+      "row_id": "ALT-0227",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P06",
@@ -5380,7 +5452,7 @@
       "zh_reference_alt_text": "图 P06-2"
     },
     {
-      "row_id": "ALT-0225",
+      "row_id": "ALT-0228",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P06",
@@ -5404,7 +5476,7 @@
       "zh_reference_alt_text": "图 P06-3"
     },
     {
-      "row_id": "ALT-0226",
+      "row_id": "ALT-0229",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P06",
@@ -5428,7 +5500,7 @@
       "zh_reference_alt_text": "图 P06-4"
     },
     {
-      "row_id": "ALT-0227",
+      "row_id": "ALT-0230",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P06",
@@ -5452,7 +5524,7 @@
       "zh_reference_alt_text": "图 P06-5"
     },
     {
-      "row_id": "ALT-0228",
+      "row_id": "ALT-0231",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P06",
@@ -5476,7 +5548,7 @@
       "zh_reference_alt_text": "图 P06-6"
     },
     {
-      "row_id": "ALT-0229",
+      "row_id": "ALT-0232",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P06",
@@ -5500,7 +5572,7 @@
       "zh_reference_alt_text": "图 P06-7"
     },
     {
-      "row_id": "ALT-0230",
+      "row_id": "ALT-0233",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P06",
@@ -5524,7 +5596,7 @@
       "zh_reference_alt_text": "图 P06-8"
     },
     {
-      "row_id": "ALT-0231",
+      "row_id": "ALT-0234",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P06",
@@ -5548,7 +5620,7 @@
       "zh_reference_alt_text": "图 P06-9"
     },
     {
-      "row_id": "ALT-0232",
+      "row_id": "ALT-0235",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P06",
@@ -5572,7 +5644,7 @@
       "zh_reference_alt_text": "图 P06-10"
     },
     {
-      "row_id": "ALT-0233",
+      "row_id": "ALT-0236",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5596,7 +5668,7 @@
       "zh_reference_alt_text": "图 P07-1"
     },
     {
-      "row_id": "ALT-0234",
+      "row_id": "ALT-0237",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5620,7 +5692,7 @@
       "zh_reference_alt_text": "图 P07-2"
     },
     {
-      "row_id": "ALT-0235",
+      "row_id": "ALT-0238",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5644,7 +5716,7 @@
       "zh_reference_alt_text": "图 P07-3"
     },
     {
-      "row_id": "ALT-0236",
+      "row_id": "ALT-0239",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5668,7 +5740,7 @@
       "zh_reference_alt_text": "图 P07-4"
     },
     {
-      "row_id": "ALT-0237",
+      "row_id": "ALT-0240",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5692,7 +5764,7 @@
       "zh_reference_alt_text": "图 P07-5"
     },
     {
-      "row_id": "ALT-0238",
+      "row_id": "ALT-0241",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5716,7 +5788,7 @@
       "zh_reference_alt_text": "图 P07-6"
     },
     {
-      "row_id": "ALT-0239",
+      "row_id": "ALT-0242",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5740,7 +5812,7 @@
       "zh_reference_alt_text": "图 P07-7"
     },
     {
-      "row_id": "ALT-0240",
+      "row_id": "ALT-0243",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5764,7 +5836,7 @@
       "zh_reference_alt_text": "图 P07-8"
     },
     {
-      "row_id": "ALT-0241",
+      "row_id": "ALT-0244",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5788,7 +5860,7 @@
       "zh_reference_alt_text": "图 P07-9"
     },
     {
-      "row_id": "ALT-0242",
+      "row_id": "ALT-0245",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5812,7 +5884,7 @@
       "zh_reference_alt_text": "图 P07-10"
     },
     {
-      "row_id": "ALT-0243",
+      "row_id": "ALT-0246",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5836,7 +5908,7 @@
       "zh_reference_alt_text": "图 P07-11"
     },
     {
-      "row_id": "ALT-0244",
+      "row_id": "ALT-0247",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5860,7 +5932,7 @@
       "zh_reference_alt_text": "图 P07-12"
     },
     {
-      "row_id": "ALT-0245",
+      "row_id": "ALT-0248",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5884,7 +5956,7 @@
       "zh_reference_alt_text": "图 P07-13"
     },
     {
-      "row_id": "ALT-0246",
+      "row_id": "ALT-0249",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P07",
@@ -5908,7 +5980,7 @@
       "zh_reference_alt_text": "图 P07-14"
     },
     {
-      "row_id": "ALT-0247",
+      "row_id": "ALT-0250",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P08",
@@ -5932,7 +6004,7 @@
       "zh_reference_alt_text": "图 P08-1"
     },
     {
-      "row_id": "ALT-0248",
+      "row_id": "ALT-0251",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P08",
@@ -5956,7 +6028,7 @@
       "zh_reference_alt_text": "图 P08-2"
     },
     {
-      "row_id": "ALT-0249",
+      "row_id": "ALT-0252",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P08",
@@ -5980,7 +6052,7 @@
       "zh_reference_alt_text": "图 P08-3"
     },
     {
-      "row_id": "ALT-0250",
+      "row_id": "ALT-0253",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P08",
@@ -6004,7 +6076,7 @@
       "zh_reference_alt_text": "图 P08-4"
     },
     {
-      "row_id": "ALT-0251",
+      "row_id": "ALT-0254",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P08",
@@ -6028,7 +6100,7 @@
       "zh_reference_alt_text": "图 P08-5"
     },
     {
-      "row_id": "ALT-0252",
+      "row_id": "ALT-0255",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P08",
@@ -6052,7 +6124,7 @@
       "zh_reference_alt_text": "图 P08-6"
     },
     {
-      "row_id": "ALT-0253",
+      "row_id": "ALT-0256",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P08",
@@ -6076,7 +6148,7 @@
       "zh_reference_alt_text": "图 P08-7"
     },
     {
-      "row_id": "ALT-0254",
+      "row_id": "ALT-0257",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P08",
@@ -6100,7 +6172,7 @@
       "zh_reference_alt_text": "图 P08-8"
     },
     {
-      "row_id": "ALT-0255",
+      "row_id": "ALT-0258",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P08",
@@ -6124,7 +6196,7 @@
       "zh_reference_alt_text": "图 P08-9"
     },
     {
-      "row_id": "ALT-0256",
+      "row_id": "ALT-0259",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P08",
@@ -6148,7 +6220,7 @@
       "zh_reference_alt_text": "图 P08-10"
     },
     {
-      "row_id": "ALT-0257",
+      "row_id": "ALT-0260",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P08",
@@ -6172,7 +6244,7 @@
       "zh_reference_alt_text": "图 P08-11"
     },
     {
-      "row_id": "ALT-0258",
+      "row_id": "ALT-0261",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P09",
@@ -6196,7 +6268,7 @@
       "zh_reference_alt_text": "图 P09-1"
     },
     {
-      "row_id": "ALT-0259",
+      "row_id": "ALT-0262",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P09",
@@ -6220,7 +6292,7 @@
       "zh_reference_alt_text": "图 P09-2"
     },
     {
-      "row_id": "ALT-0260",
+      "row_id": "ALT-0263",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P09",
@@ -6244,7 +6316,7 @@
       "zh_reference_alt_text": "图 P09-3"
     },
     {
-      "row_id": "ALT-0261",
+      "row_id": "ALT-0264",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P09",
@@ -6268,7 +6340,7 @@
       "zh_reference_alt_text": "图 P09-4"
     },
     {
-      "row_id": "ALT-0262",
+      "row_id": "ALT-0265",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P09",
@@ -6292,7 +6364,7 @@
       "zh_reference_alt_text": "图 P09-5"
     },
     {
-      "row_id": "ALT-0263",
+      "row_id": "ALT-0266",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P09",
@@ -6316,7 +6388,7 @@
       "zh_reference_alt_text": "图 P09-6"
     },
     {
-      "row_id": "ALT-0264",
+      "row_id": "ALT-0267",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P09",
@@ -6340,7 +6412,7 @@
       "zh_reference_alt_text": "图 P09-7"
     },
     {
-      "row_id": "ALT-0265",
+      "row_id": "ALT-0268",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P09",
@@ -6364,7 +6436,7 @@
       "zh_reference_alt_text": "图 P09-8"
     },
     {
-      "row_id": "ALT-0266",
+      "row_id": "ALT-0269",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P09",
@@ -6388,7 +6460,7 @@
       "zh_reference_alt_text": "图 P09-9"
     },
     {
-      "row_id": "ALT-0267",
+      "row_id": "ALT-0270",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P09",
@@ -6412,7 +6484,7 @@
       "zh_reference_alt_text": "图 P09-10"
     },
     {
-      "row_id": "ALT-0268",
+      "row_id": "ALT-0271",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P09",
@@ -6436,7 +6508,7 @@
       "zh_reference_alt_text": "图 P09-11"
     },
     {
-      "row_id": "ALT-0269",
+      "row_id": "ALT-0272",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P09",
@@ -6460,7 +6532,7 @@
       "zh_reference_alt_text": "图 P09-12"
     },
     {
-      "row_id": "ALT-0270",
+      "row_id": "ALT-0273",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P10",
@@ -6484,7 +6556,7 @@
       "zh_reference_alt_text": "图 P10-1"
     },
     {
-      "row_id": "ALT-0271",
+      "row_id": "ALT-0274",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P10",
@@ -6508,7 +6580,7 @@
       "zh_reference_alt_text": "图 P10-2"
     },
     {
-      "row_id": "ALT-0272",
+      "row_id": "ALT-0275",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P10",
@@ -6532,7 +6604,7 @@
       "zh_reference_alt_text": "图 P10-3"
     },
     {
-      "row_id": "ALT-0273",
+      "row_id": "ALT-0276",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P10",
@@ -6556,7 +6628,7 @@
       "zh_reference_alt_text": "图 P10-4"
     },
     {
-      "row_id": "ALT-0274",
+      "row_id": "ALT-0277",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P10",
@@ -6580,7 +6652,7 @@
       "zh_reference_alt_text": "图 P10-5"
     },
     {
-      "row_id": "ALT-0275",
+      "row_id": "ALT-0278",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P10",
@@ -6604,7 +6676,7 @@
       "zh_reference_alt_text": "图 P10-6"
     },
     {
-      "row_id": "ALT-0276",
+      "row_id": "ALT-0279",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P10",
@@ -6628,7 +6700,7 @@
       "zh_reference_alt_text": "图 P10-7"
     },
     {
-      "row_id": "ALT-0277",
+      "row_id": "ALT-0280",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P10",
@@ -6652,7 +6724,7 @@
       "zh_reference_alt_text": "图 P10-8"
     },
     {
-      "row_id": "ALT-0278",
+      "row_id": "ALT-0281",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P10",
@@ -6676,7 +6748,7 @@
       "zh_reference_alt_text": "图 P10-9"
     },
     {
-      "row_id": "ALT-0279",
+      "row_id": "ALT-0282",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P10",
@@ -6700,7 +6772,7 @@
       "zh_reference_alt_text": "图 P10-10"
     },
     {
-      "row_id": "ALT-0280",
+      "row_id": "ALT-0283",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P11",
@@ -6724,7 +6796,7 @@
       "zh_reference_alt_text": "Mini-DeepSeek Data Pipeline"
     },
     {
-      "row_id": "ALT-0281",
+      "row_id": "ALT-0284",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P12",
@@ -6748,7 +6820,7 @@
       "zh_reference_alt_text": "图 P12-1"
     },
     {
-      "row_id": "ALT-0282",
+      "row_id": "ALT-0285",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P13",
@@ -6772,7 +6844,7 @@
       "zh_reference_alt_text": "Multimodal Instruction Factory"
     },
     {
-      "row_id": "ALT-0283",
+      "row_id": "ALT-0286",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P14",
@@ -6796,7 +6868,7 @@
       "zh_reference_alt_text": "P14 Video Generation Data Pipeline"
     },
     {
-      "row_id": "ALT-0284",
+      "row_id": "ALT-0287",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P14",
@@ -6820,7 +6892,7 @@
       "zh_reference_alt_text": "frame1"
     },
     {
-      "row_id": "ALT-0285",
+      "row_id": "ALT-0288",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P14",
@@ -6840,11 +6912,11 @@
       "review_status": "Draft",
       "reviewer": "",
       "notes": "",
-      "zh_reference_caption": "",
-      "zh_reference_alt_text": ""
+      "zh_reference_caption": "表 P14-12：视频片段多帧抽样示例 图中展示了产出数据中的两帧采样结果。该片段展示了一段从高空视角拍摄的海岸线画面：深蓝色海水不断冲击崎岖礁石，浪花在暗色岩壁边缘形成明显的白色泡沫，岩石间分布着少量绿色植被，使画面在自然环境中保留了一定层次感。多帧 caption 覆盖该片段的主体、场景、光照和氛围，描述自然光照、冷色调海面、清晰岩石纹理，以及海浪运动带来的动态感。从镜头语言标注结果看，该 shot 被识别为 extremewide 景别、highangle 高角度视角，构图方式为 ruleofthirds，光照类型为 natural，整体色彩倾向为 cool，风格标签为 cinematic。相机运动模块将其判定为 zoomin，说明画面存在较明显的推进或尺度变化；motionstrength=0.8974 表明该片段具有稳定运动信号，可用于 T2V 训练中学习自然场景运动、航拍视角和海岸镜头语言",
+      "zh_reference_alt_text": "frame2"
     },
     {
-      "row_id": "ALT-0286",
+      "row_id": "ALT-0289",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P15",
@@ -6868,7 +6940,7 @@
       "zh_reference_alt_text": "DataAgent 语义问数助手工程链路"
     },
     {
-      "row_id": "ALT-0287",
+      "row_id": "ALT-0290",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P15",
@@ -6892,7 +6964,7 @@
       "zh_reference_alt_text": "围绕 DataAgent、Semantic Service、Data Studio、Data Ops 与基础设施展开的 DataGallery 生态架构"
     },
     {
-      "row_id": "ALT-0288",
+      "row_id": "ALT-0291",
       "language": "en",
       "part": "Part 14: Practical Projects",
       "unit": "P15",

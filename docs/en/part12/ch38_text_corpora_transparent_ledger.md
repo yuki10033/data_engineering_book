@@ -12,7 +12,7 @@ text corpora; open Web; FineWeb; Dolma; filtering and deduplication; transparent
 
 ## Case A: FineWeb: Open Web Text Corpora, Filtering, Deduplication, and Processing Choices
 
-### Case A.0: Learning Objectives
+### Case A: Learning Objectives
 
 After completing this chapter, readers should be able to:
 
@@ -69,7 +69,7 @@ Here, $F$ denotes the filtering strategy, $D_F$ is the filtered dataset, $S_{eva
 
 FineWeb is publicly available as a full dataset, configurations split by Common Crawl dump, and smaller sample versions. The official dataset card states that users can load the full dataset or specify a particular crawl/dump; dump names follow the `CC-MAIN-(year)-(week number)` format. Sample versions include random subsets of approximately 350B, 100B, and 10B GPT-2 tokens, enabling researchers to reproduce experiments or debug processing code at lower cost.
 
-*Table 41-1 Public FineWeb Forms and Engineering Uses*
+*Table 38-1 Public FineWeb Forms and Engineering Uses*
 
 | Form | Public Description | Engineering Use | Usage Notes |
 | --- | ---: | --- | --- |
@@ -113,7 +113,7 @@ The third concerns filter validation. FineWeb does not choose filters solely fro
 
 The official FineWeb dataset card states that samples include `language`, `language_score`, and `token_count` annotations, derived respectively from the language filter and GPT-2 tokenizer statistics. When reproducing a FineWeb-like pipeline inside an enterprise, processing status, provenance, deduplication, and risk fields should also be retained. Otherwise, when training results become abnormal, it is impossible to determine whether the issue came from extraction, filtering, deduplication, or sampling.
 
-*Table 41-2 FineWeb-like Web Document Record Schema*
+*Table 38-2 FineWeb-like Web Document Record Schema*
 
 | Field Group | Typical Fields | Source or Generation Method | Engineering Use |
 | --- | --- | --- | --- |
@@ -188,7 +188,7 @@ One important feature of FineWeb is that its processing pipeline has a public sc
 
 The main processing pipeline can be abstracted in the following order. Class names come from the DataTrove FineWeb example script; explanations are organized by this chapter.
 
-*Table 41-3 Key Modules in the FineWeb Main Processing Pipeline*
+*Table 38-3 Key Modules in the FineWeb Main Processing Pipeline*
 
 | Order | DataTrove Module | Input | Output | Role |
 | ---: | --- | --- | --- | --- |
@@ -232,7 +232,7 @@ $$
 
 MinHash approximates this similarity with multiple hash functions. The FineWeb paper states that its deduplication parameters are 5-grams and 112 hash functions, split into 14 buckets with 8 hashes per bucket; if the 8 MinHash values in any bucket match, the pair is considered a duplicate candidate. The `MinhashConfig` in the DataTrove example script also corresponds to `n_grams=5`, `num_buckets=14`, and `hashes_per_bucket=8`.
 
-![Figure 38-1 FineWeb MinHash deduplication and PII-processing flow](../../images/part12/ch41_01_fineweb_minhash_pii_flow_en.svg)
+![Figure 38-1 FineWeb MinHash deduplication and PII-processing flow](../../images/part12/ch38_01_fineweb_minhash_pii_flow_en.svg)
 
 *Figure 38-1 FineWeb MinHash deduplication and PII-processing flow. Source: original illustration based on Hugging Face DataTrove `examples/fineweb.py` and the FineWeb dataset card.*
 
@@ -242,7 +242,7 @@ Intuitively, global deduplication seems more thorough: put all 96 crawls togethe
 
 This result matters for engineering practice. Deduplication is not mathematically better simply because it is more exhaustive; what matters is how it changes the data distribution. Global deduplication can alter the time distribution, site coverage, and duplicate-cluster structure across old and new crawls in complex ways. If one looks only at "how much duplication was removed," valuable samples may be removed while low-quality long-tail samples remain.
 
-![Figure 38-2 FineWeb data-processing-choice ablation loop](../../images/part12/ch41_02_fineweb_ablation_loop_en.svg)
+![Figure 38-2 FineWeb data-processing-choice ablation loop](../../images/part12/ch38_02_fineweb_ablation_loop_en.svg)
 
 *Figure 38-2 FineWeb data-processing-choice ablation loop. Source: original illustration based on FineWeb paper Section 3.1.*
 
@@ -252,9 +252,9 @@ FineWeb's evaluation method differs from a typical dataset introduction. It trea
 
 #### Case A.5.1 Fixed Variables
 
-FineWeb's evaluation protocol can be summarized in Table 41-4.
+FineWeb's evaluation protocol can be summarized in Table 38-4.
 
-*Table 41-4 FineWeb Data-ablation Evaluation Protocol*
+*Table 38-4 FineWeb Data-ablation Evaluation Protocol*
 
 | Control Item | FineWeb Paper Practice | Data-engineering Meaning |
 | --- | --- | --- |
@@ -284,11 +284,11 @@ Second, compare existing rules. When studying C4 rules, FineWeb finds that the t
 
 Third, design custom filters. FineWeb collects more than 50 document-level and cross-document statistical indicators, compares distributions between "higher-quality" and "lower-quality" data, chooses thresholds that distinguish the two, and validates them with 28B-token ablation runs. The adopted custom filters focus on three issues: low ratio of lines ending in punctuation, high ratio of repeated-line characters, and abnormal ratio of short lines.
 
-#### Case A.5.3 Common Failures and Repair Actions
+#### Case A.5.2 Common Failures and Repair Actions
 
 FineWeb's experience can be converted into an error-attribution table for Web pre-training corpora. This is not an official FineWeb table, but an engineering retrospective organized by this chapter from the FineWeb paper and dataset card.
 
-*Table 41-5 Common Failures and Repair Actions for FineWeb-like Web Corpora*
+*Table 38-5 Common Failures and Repair Actions for FineWeb-like Web Corpora*
 
 | Error Type | Symptom | Possible Root Cause | Data-engineering Repair Action |
 | --- | --- | --- | --- |
@@ -325,7 +325,7 @@ For readers of this book, what is most worth learning from FineWeb is not copyin
 
 ## Case B: Dolma: Transparent Pre-training Corpus Ledgers and Attributable Evaluation
 
-### Case B.0: Learning Objectives
+### Case B: Learning Objectives
 
 After completing this chapter, readers should be able to:
 
@@ -367,7 +367,7 @@ If these three ledgers are disconnected, transparency degrades into "downloadabi
 
 Dolma is not a single static file, but a corpus asset with version evolution. The Hugging Face dataset card lists versions such as `v1`, `v1_5`, `v1_5-sample`, `v1_6`, `v1_6-sample`, and `v1_7`. Among them, `v1_7` is used to train OLMo 7B-v1.7 and introduces new sources, more quality filtering, and fuzzy deduplication.
 
-*Table 42-1 Public Dolma Versions and Uses*
+*Table 38-6 Public Dolma Versions and Uses*
 
 | Version | Release Date | Compressed Size | Dataset-card Description | Engineering Use |
 | --- | --- | ---: | --- | --- |
@@ -382,9 +382,9 @@ Source: Versions section of the Hugging Face `allenai/dolma` dataset card.
 
 #### Case B.2.1 v1.6 Source Structure
 
-Dolma covers Web, code, papers, social media, books, and encyclopedic sources. To avoid mixing versions, Table 42-2 uses the coarse-grained statistics from the dataset card's v1.6 summary statistics. The v1.7 sources are more fine-grained, adding Refined Web, StarCoder, arXiv, StackExchange, Flan, OpenWebMath, Algebraic Stack, MegaWika, and other sources. Subsequent writing or experiments should explicitly state which version is used.
+Dolma covers Web, code, papers, social media, books, and encyclopedic sources. To avoid mixing versions, Table 38-7 uses the coarse-grained statistics from the dataset card's v1.6 summary statistics. The v1.7 sources are more fine-grained, adding Refined Web, StarCoder, arXiv, StackExchange, Flan, OpenWebMath, Algebraic Stack, MegaWika, and other sources. Subsequent writing or experiments should explicitly state which version is used.
 
-*Table 42-2 Dolma v1.6 Source Statistics*
+*Table 38-7 Dolma v1.6 Source Statistics*
 
 | Source | Document Type | UTF-8 Bytes | Documents | Unicode Words | Llama Tokens |
 | --- | --- | ---: | ---: | ---: | ---: |
@@ -399,7 +399,7 @@ Dolma covers Web, code, papers, social media, books, and encyclopedic sources. T
 
 Source: Hugging Face `allenai/dolma` dataset card, Summary Statistics v1.6. GB, M, and B follow the dataset-card convention.
 
-Table 42-2 should not be read only as a scale display. It reveals three engineering facts.
+Table 38-7 should not be read only as a scale display. It reveals three engineering facts.
 
 First, Dolma is a source mix, not a single Web dump. Common Crawl accounts for a large share, but code, papers, social media, books, and encyclopedic content all enter the corpus in different forms. Changes in model capability cannot be vaguely attributed to "more Web data."
 
@@ -449,7 +449,7 @@ The Dolma v1.7 dataset card lists both source token counts and sample proportion
 
 Transparent corpora do not end with packaging and uploading `text`. At least three layers of records are needed: an individual document record, a source card, and a training-version manifest. The document record supports training and location; the source card explains data origin and processing rules; the training manifest reproduces the data actually consumed by a model run.
 
-*Table 42-3 Dolma-like Transparent Corpus Record Schema*
+*Table 38-8 Dolma-like Transparent Corpus Record Schema*
 
 | Layer | Typical Fields | Source or Generation Method | Engineering Use |
 | --- | --- | --- | --- |
@@ -500,7 +500,7 @@ The Dolma GitHub repository states that Dolma is both a dataset and a toolkit. D
 
 Dolma Toolkit documentation summarizes data organization as four actions: tag, dedup, mix, and tokenize. They are not isolated scripts, but evidence-chain generators: tag records document attributes, dedup records what is retained and removed, mix records sampling proportions, and tokenize records the token convention that enters training.
 
-*Table 42-4 Dolma Toolkit Processing Actions and Evidence Outputs*
+*Table 38-9 Dolma Toolkit Processing Actions and Evidence Outputs*
 
 | Order | Action | Official Documentation Description | Evidence Output | Main Risk |
 | ---: | --- | --- | --- | --- |
@@ -511,7 +511,7 @@ Dolma Toolkit documentation summarizes data organization as four actions: tag, d
 
 Source: Dolma Toolkit documentation README.
 
-![Figure 38-3 Dolma transparent-corpus evidence chain](../../images/part12/ch42_01_dolma_evidence_chain_en.svg)
+![Figure 38-3 Dolma transparent-corpus evidence chain](../../images/part12/ch38_03_dolma_evidence_chain_en.svg)
 
 *Figure 38-3 Dolma transparent-corpus evidence chain. Source: original illustration based on AllenAI Dolma Toolkit documentation.*
 
@@ -533,13 +533,13 @@ $$
 
 When $\Delta_s$ changes clearly on code tasks, scientific QA, or long-context tasks, the data team can trace capability changes back to source mix instead of vaguely attributing them to "model parameters."
 
-![Figure 38-4 Dolma source mix and training-diagnosis loop](../../images/part12/ch42_02_dolma_source_mix_diagnosis_en.svg)
+![Figure 38-4 Dolma source mix and training-diagnosis loop](../../images/part12/ch38_04_dolma_source_mix_diagnosis_en.svg)
 
 *Figure 38-4 Dolma source mix and training-diagnosis loop. Source: original illustration based on the Dolma dataset card and OLMo training use.*
 
 #### Case B.5.2 Diagnosis Checklist
 
-*Table 42-5 Dolma-like Transparent Corpus Evaluation and Diagnosis Table*
+*Table 38-10 Dolma-like Transparent Corpus Evaluation and Diagnosis Table*
 
 | Evaluation Question | Required Records | Metric or Evidence | Possible Action |
 | --- | --- | --- | --- |
@@ -551,7 +551,7 @@ When $\Delta_s$ changes clearly on code tasks, scientific QA, or long-context ta
 
 #### Case B.5.3 Common Failure Modes
 
-*Table 42-6 Common Failures and Repair Actions for Dolma-like Transparent Corpora*
+*Table 38-11 Common Failures and Repair Actions for Dolma-like Transparent Corpora*
 
 | Failure Mode | Symptom | Possible Root Cause | Governance Action |
 | --- | --- | --- | --- |

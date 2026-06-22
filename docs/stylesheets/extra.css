@@ -61,6 +61,38 @@
     max-width: 90%; /* 防止图片过大 */
   }
 
+  .md-typeset .figure-grid {
+    margin: 20px auto;
+  }
+
+  .md-typeset .figure-grid > p {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    align-items: start;
+  }
+
+  .md-typeset .figure-grid-4 > p {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md-typeset .figure-grid a {
+    display: block;
+  }
+
+  .md-typeset .figure-grid img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 900px) {
+    .md-typeset .figure-grid-4 > p {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
   .md-typeset .chapter-authors {
     margin: -0.4rem 0 1.4rem;
     color: #455064;

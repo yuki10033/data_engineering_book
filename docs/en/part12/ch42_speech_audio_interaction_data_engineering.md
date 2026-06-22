@@ -12,7 +12,7 @@ speech data engineering; audio interaction; VoiceStyleControl; style control; S2
 
 ## VoiceStyleControl: Semantic Responses and Voice-Style Control
 
-### VoiceStyleControl.0: Learning Objectives
+### Learning Objectives
 
 Upon completing this chapter, readers should be able to:
 
@@ -22,7 +22,7 @@ Upon completing this chapter, readers should be able to:
 - Design multi-dimensional sample acceptance rules covering text consistency, audio usability, acoustic condition consistency, emotion perceptibility, and authorization traceability.
 - Identify risks related to voice identity, authorization, emotional misuse, anti-forgery provenance, and privacy protection, and govern them within the data pipeline.
 
-### VoiceStyleControl.1: Why Voice Conversation Requires Explicit Style Control
+### 42.1 Why Voice Conversation Requires Explicit Style Control
 
 Ordinary text conversation samples typically consist of role, context, user request, and assistant response. As long as role boundaries, text length, safety labels, and training masks are clear, the model can learn the input–output mapping on text tokens. Speech samples introduce an additional layer of acoustic state that text cannot replace: sampling rate, duration, silence, loudness, noise, speaker identity, prosody, emotion, and discrete speech tokens all influence training outcomes. Having only the response text can explain "what was said" but not "how it should be said."
 
@@ -40,7 +40,7 @@ From a product-experience perspective, these boundaries are critical. A companio
 
 From a data engineering perspective, explicit style control also changes sample acceptance criteria. A text sample generally enters the candidate pool as long as the user's question and the assistant's answer match; a voice sample must simultaneously satisfy text consistency, audio usability, target acoustic condition consistency, emotion perceptibility, and authorization traceability. Failure on any single dimension affects training: correct text with a wrong acoustic condition weakens condition control; correct acoustic condition with wrong emotion weakens emotion control; perceptible emotion with dangerous content converts risky behavior into output with greater persuasive impact.
 
-### VoiceStyleControl.2: Dataset Overview: Two Complementary Subsets — S2S and TTS
+### 42.2 Dataset Overview: Two Complementary Subsets — S2S and TTS
 
 VoiceStyleControl is composed of two task types: speech-to-speech dialogue generation and controllable speech generation conditioned on text. Both serve the same goal — enabling the model to generate emotionally expressive speech based on semantic content, acoustic conditions, and emotional style — but they provide supervision from different perspectives.
 
@@ -65,9 +65,9 @@ The two subsets respectively serve as "capability foundation" and "interaction d
 
 VoiceStyleControl should therefore not be understood simply as a TTS dataset. The core supervision objective of an ordinary TTS corpus is "given text, read the text"; VoiceStyleControl's core supervision objective is "given semantic content and style conditions, generate speech appropriate to the conversational goal." The former primarily concerns pronunciation, naturalness, and audio quality; the latter also concerns user state, assistant acoustic conditions, emotion selection, cross-turn consistency, and safety boundaries. Once the data objective differs, schema design, balancing, splitting, and evaluation all change accordingly.
 
-### VoiceStyleControl.3: Sample Schema: Separate Modeling of the Semantic Channel and Style Channel
+### 42.3 Sample Schema: Separate Modeling of the Semantic Channel and Style Channel
 
-![Figure 42-1: Dual-channel schema for semantic response and style control](../../images/part12/ch42_fig02_dual_channel_schema_en.svg)
+![Figure 42-1: Dual-channel schema for semantic response and style control](../../images/part12/ch42_01_dual_channel_schema_en.svg)
 
 *Figure 42-1: Dual-channel schema for semantic response and style control. The semantic channel answers "what to say," the style channel answers "with which voice and emotion to say it," and the acoustic supervision channel binds both to audio files, speech tokens, and sampling configuration.*
 
@@ -266,9 +266,9 @@ The unified schema splits the training entry point into three parts: semantic in
 
 Once training samples enter the dataloader, they are projected from the standard schema into task-specific views. The S2S view may take the form `query_audio + answer_gender + answer_mood -> answer_token`, optionally augmented with the `query` transcription as an auxiliary semantic input; the TTS view may take the form `text + answer + answer_gender + answer_mood -> answer_token`. The evaluation view, conversely, fixes certain fields while varying others — for example, fixing `answer` while varying `answer_mood`, or fixing `answer_mood` while varying `answer_id`. This design principle — stable record contract, variable training view — serves controllable speech generation experiments, not auxiliary speaker identification or voice-print modeling experiments.
 
-### VoiceStyleControl.4: Construction Pipeline: From Text Conversation to Controllable Voice Records
+### 42.4 Construction Pipeline: From Text Conversation to Controllable Voice Records
 
-![Figure 42-2: VoiceStyleControl data construction pipeline](../../images/part12/ch42_fig01_data_pipeline_en.svg)
+![Figure 42-2: VoiceStyleControl data construction pipeline](../../images/part12/ch42_02_voice_style_data_pipeline_en.svg)
 
 *Figure 42-2: VoiceStyleControl data construction pipeline. Text conversation or style content is first assigned speaker and emotion conditions, then audio is generated or collected through the authorized reference voice pool, and finally the samples are tokenized, quality-checked, balanced, and packaged.*
 
@@ -360,9 +360,9 @@ The seventh step is packaging. Final samples can be stored in JSONL, Parquet, or
 
 The packaging artifacts include not only JSONL, Parquet, or Hugging Face Dataset files but also a data card describing the data boundaries. The data card records total sample count, subset composition, emotion distribution, gender field distribution, reference voice IDs, language, sampling rate, tokenizer version, authorization scope, and splitting strategy, and distinguishes training conditions, audit metadata, and anonymized fields in the public release. This boundary statement prevents `answer_id` from being misused as a real identity label and prevents `mood` from being treated as a reliable ground truth requiring no verification.
 
-### VoiceStyleControl.5: Quality Assessment and Closed-Loop Remediation
+### 42.5 Quality Assessment and Closed-Loop Remediation
 
-![Figure 42-3: Quality assessment and data flywheel closed loop](../../images/part12/ch42_fig03_quality_loop_en.svg)
+![Figure 42-3: Quality assessment and data flywheel closed loop](../../images/part12/ch42_03_quality_loop_en.svg)
 
 *Figure 42-3: Quality assessment and data flywheel closed loop. Automated validation, reverse ASR, style assessment, and manual sampling together form a defective-sample queue that feeds back into re-synthesis, re-annotation, downweighting, or removal.*
 
@@ -389,7 +389,7 @@ Emotion control evaluation cannot rely solely on classifier confidence. Happy of
 
 Closed-loop remediation should preserve failure type information. Semantic errors are sent back to text generation or ASR reverse-transcription; acoustic condition errors are sent back to reference voice selection or synthesis parameters; emotion errors are sent back to style description, emotion labels, or the synthesis model; audio quality errors are sent back to waveform processing; compliance errors enter isolation, removal, and audit workflows. Every remediation should generate a new version rather than overwrite the source file. Only then can subsequent model performance changes be traced to data changes rather than becoming unexplainable training fluctuations.
 
-### VoiceStyleControl.6: Evaluation Protocol: Making Controllability Comparable
+### 42.6 Evaluation Protocol: Making Controllability Comparable
 
 The evaluation set should be constructed independently from the training set logic, with particular care to prevent the same reference voice ID from appearing in both training and test sets. For S2SEmoControl, evaluation samples should cover combinations of different query emotions mapped to different answer emotions; for TTSSpeakerControl, evaluation samples should cover the same `answer` under different `text`, `answer_gender`, and `answer_mood` conditions. An effective evaluation protocol does not merely ask "does the generated voice sound good" — it also asks "whether the same sentence genuinely differs across different control conditions, and whether those differences are reasonable."
 
@@ -405,7 +405,7 @@ Audio quality evaluation includes both objective metrics and subjective scores. 
 
 Evaluation results should also be written back to the data version, not stored only in model reports. If a particular model version achieves high emotion classification accuracy on fearful but low human comfort scores, the data may have constructed fearful as an overly intense or overly theatrical expression; if the reference acoustic condition increasingly resembles a recognizable real person and compliance risk rises, the reference audio or evaluation target may be over-optimizing for identity replication. Only by feeding these findings back into sample filtering, proportion adjustment, and synthesis strategy will evaluation genuinely improve the next version of data.
 
-### VoiceStyleControl.7: Governance of Privacy, Authorization, and Misuse Risks
+### 42.7 Governance of Privacy, Authorization, and Misuse Risks
 
 Voice identity is a highly sensitive data asset. A person's voice contains cues about age, gender, regional background, emotional state, health condition, and personal identity; in speaker verification systems, voice can even function as an authentication credential. Once controllable voice data incorporates voice cloning, authorization, revocation, usage restriction, and auditing must be embedded in the data lifecycle — not appended as disclaimer footnotes at model release time.
 
@@ -432,7 +432,7 @@ Privacy protection also encompasses content anonymization. Voice samples may con
 
 Bias governance is equally important. If women's voices are consistently associated with fearful or sad in the training set while men's voices are more associated with angry, the model will learn and amplify these stereotypes. Therefore, gender statistics must not remain at the level of marginal proportions; they must be examined in cross-tabulation views of `query_gender`, `answer_gender`, `query_mood`, and `answer_mood`. The evaluation set should also include counterfactual samples to check whether emotional expression for the same content is equitable across different genders.
 
-### VoiceStyleControl.8: Connections to Adjacent Chapters in Data Engineering
+### 42.8 Connections to Adjacent Chapters in Data Engineering
 
 VoiceStyleControl inherits the foundational capabilities of audio and video data engineering. The audio segmentation, ASR, noise reduction, speaker separation, and temporal alignment discussed in Chapter 10 are further refined into a more precise sample contract: one must know not only which text a given audio segment corresponds to, but also which reference voice ID generated it, at what mood, at what sampling rate, and at what token frequency. An ordinary audio pipeline addresses "can alignment be achieved"; controllable voice interaction further addresses "once aligned, can the voice be generated conditionally."
 
@@ -444,7 +444,7 @@ The privacy compliance chapters define boundaries for VoiceStyleControl. Chapter
 
 In the context of multimodal generative data engineering, VoiceStyleControl shares a core pattern with Chapter 48: decomposing generation targets into content conditions and style conditions, then binding training supervision with a structured schema. The prompt, style, motion, camera, and safety tag of T2I/T2V correspond in voice to `answer`, `answer_gender`, `answer_mood`, reference voice ID, `sample_rate`, and audio token. The end-to-end LLM data flywheel in Part 14 Project 10 can also absorb this design: construct an initial version of voice data offline, train a controllable generation model, collect experience feedback online, feed it back into quality inspection and balancing, and then release the next version of data and model.
 
-### VoiceStyleControl: Summary
+### 42.9 Summary
 
 The value of VoiceStyleControl lies not in simply accumulating voice samples to a larger scale but in placing semantic response, acoustic conditions, emotion control, and speech generation supervision together in a single auditable record. S2SEmoControl provides interaction supervision from spoken query to spoken answer; TTSSpeakerControl provides direct supervision from natural-language style description to target speech. Together, they enable the model both to understand user speech and to generate responses according to specified acoustic conditions and emotions.
 

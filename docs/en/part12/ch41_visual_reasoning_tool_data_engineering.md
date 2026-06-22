@@ -12,7 +12,7 @@ visual reasoning; chart question answering; medical images; tool calling; ROI; m
 
 ## Case A: Multi-Chart Infographics: Cross-Chart Evidence Aggregation and Multi-Step Reasoning
 
-### Case A.0: Learning Objectives
+### Case A: Learning Objectives
 
 After studying this case, readers should be able to:
 
@@ -63,7 +63,7 @@ The dataset samples across 28 vertical fields covering public life, industry, re
 
 Multi-domain design reduces overfitting to a single theme. Chart conventions, legends, and domain abbreviations differ across fields, raising the difficulty of visual-context reasoning.
 
-![Figure 41-1: Domain distribution in the multi-chart infographic reasoning dataset](../../images/part12/ch39_01_domain_distribution_en.png)
+![Figure 41-1: Domain distribution in the multi-chart infographic reasoning dataset](../../images/part12/ch41_01_domain_distribution_en.png)
 
 *Figure 41-1. Distribution of domain coverage in the Multi-Chart Infographic Reasoning Dataset, spanning 28 fine-grained domains.*
 
@@ -73,7 +73,7 @@ The dataset contains more than 20 common visualization styles, including bar cha
 
 Each infographic uses whatever mixed layout the original creator used, such as “map + tabular + stacked bar + pictogram” or “pie + ranking card + line.” Different chart types store data differently: tables use rows and columns, maps use geographic regions, pictograms use icon counts, and line charts use temporal sequences. The model must adapt reading rules across formats and then aggregate across them.
 
-![Figure 41-2: Chart type distribution](../../images/part12/ch39_02_chart_type_distribution_en.png)
+![Figure 41-2: Chart type distribution](../../images/part12/ch41_02_chart_type_distribution_en.png)
 
 *Figure 41-2. Distribution of sub-chart types in the Multi-Chart Infographic Reasoning Dataset, covering 23 distinct chart categories.*
 
@@ -83,7 +83,7 @@ The subquestions are not limited to one extraction style. They cover 17 mainstre
 
 Questions within one infographic are randomly mixed across types, creating chains such as “maximum lookup + difference calculation + conditional reasoning” or “counting + ratio calculation + visual reasoning.” Extraction questions focus on reading; calculation questions combine multiple values; conditional questions use legends and filters; visual questions use symbols and visual context.
 
-![Figure 41-3: Question type distribution](../../images/part12/ch39_03_question_type_distribution_en.png)
+![Figure 41-3: Question type distribution](../../images/part12/ch41_03_question_type_distribution_en.png)
 
 *Figure 41-3. Distribution of sub-question types in the Multi-Chart Infographic Reasoning Dataset, comprising 13 question categories.*
 
@@ -101,11 +101,11 @@ The dataset's shark-attack example illustrates subchart partitioning, question c
 
 #### Case A.3.1 Physical Layers of One Compound Infographic
 
-<div style="display: flex; gap: 4px; align-items: center;">
-    <img src="../../images/part12/ch39_where-the-most-shark-attacks-occur-in-the-united-states_1.jpg" height="300">
-    <img src="../../images/part12/ch39_where-the-most-shark-attacks-occur-in-the-united-states_2.jpg" height="300">
-    <img src="../../images/part12/ch39_where-the-most-shark-attacks-occur-in-the-united-states_3.jpg" height="300">
-    <img src="../../images/part12/ch39_where-the-most-shark-attacks-occur-in-the-united-states_4.jpg" height="300">
+<div class="figure-grid figure-grid-4" markdown="1">
+![Shark-attack infographic subfigure 1 showing historical U.S. county rankings](../../images/part12/ch41_04_shark_attack_infographic_1.jpg)
+![Shark-attack infographic subfigure 2 showing state-level attacks in the last ten years](../../images/part12/ch41_04_shark_attack_infographic_2.jpg)
+![Shark-attack infographic subfigure 3 showing fatal attack annotation and related context](../../images/part12/ch41_04_shark_attack_infographic_3.jpg)
+![Shark-attack infographic subfigure 4 comparing average annual accidental deaths](../../images/part12/ch41_04_shark_attack_infographic_4.jpg)
 </div>
 
 *Figure 41-4. Example of a multi-chart infographic sample from the dataset (Shark Attacks), consisting of four distinct subcharts covering three categories of statistics: historical shark-attack county ranking in the United States, state-level shark attacks in the last ten years, and average annual accidental deaths in the United States. The original figure is vertically elongated and hard to read as a whole; it is thus divided into horizontally aligned subfigures.*
@@ -152,7 +152,7 @@ Each infographic includes one question that cannot be answered from the image, s
 
 The dataset construction process has four core stages: collecting and filtering real compound infographics, manually partitioning subchart regions, designing layered question chains, and cross-checking answers. No synthetic charts are generated. Large models can help propose questions, but humans verify and revise them.
 
-![Figure 41-5: Multi-chart infographic dataset construction pipeline](../../images/part12/ch39_05_multichart_dataset_pipeline_en.png)
+![Figure 41-5: Multi-chart infographic dataset construction pipeline](../../images/part12/ch41_05_multichart_dataset_pipeline_en.png)
 
 *Figure 41-5. Overview of the four-stage data construction pipeline for the Multi-Chart Infographic Reasoning Dataset: collecting and filtering real compound infographics, manually partitioning subchart regions, designing layered question chains, and cross-checking answers.*
 
@@ -234,7 +234,7 @@ The multi-chart infographic reasoning dataset starts from real compound infograp
 
 MedImage-ToolVQA is implemented with the MindSpore stack. Project URL: <https://github.com/blackkiring/MedImage-ToolVQA-Mindspore>.
 
-### Case B.0: Learning Objectives
+### Case B: Learning Objectives
 
 After studying this case, readers should be able to:
 
@@ -446,7 +446,7 @@ writer.commit()
 train_ds = ds.MindDataset("tool_sft.mindrecord").shuffle(4096).batch(8)
 ```
 
-![Figure 41-6: MedImage-ToolVQA conceptual construction flow](../../images/part12/ch41_02_medimage_tool_vqa_pipeline_en.svg)
+![Figure 41-6: MedImage-ToolVQA conceptual construction flow](../../images/part12/ch41_06_medimage_tool_vqa_pipeline_en.svg)
 
 *Figure 41-6: Conceptual construction flow for MedImage-ToolVQA. The key point is not script order, but how the evidence chain and behavior chain are preserved across stages.*
 
@@ -488,7 +488,7 @@ Tool boundaries must also be stated clearly in system prompts and dataset docume
 
 The core of a tool trajectory is multi-turn structure. It is not a matter of writing a tool call into the same text paragraph; it separates the tool action from the tool observation so the model experiences an "act, observe, continue judging" process during training (Yao et al. 2023).
 
-![Figure 41-7: Multi-turn structure of tool-call trajectories](../../images/part12/ch41_03_tool_trajectory_structure_en.svg)
+![Figure 41-7: Multi-turn structure of tool-call trajectories](../../images/part12/ch41_07_tool_trajectory_structure_en.svg)
 
 *Figure 41-7: Multi-turn structure of a tool-call trajectory. Tool observations return as new image inputs; the model must continue reasoning from the observation image rather than merely produce a formally correct call.*
 
@@ -565,7 +565,7 @@ In SFT, clarity and stability matter most. The model must learn that `<tool_call
 
 Medical image SFT records should also keep an imaging-task schema. Here “diagnosis” means structuring the training task, candidate labels, evidence region, and safety boundary; it does not ask the model to provide clinical conclusions.
 
-![Figure 41-8: Real image and bbox evidence in the SFT schema](../../images/part12/ch41_05_sft_schema_real_bbox_example_en.svg)
+![Figure 41-8: Real image and bbox evidence in the SFT schema](../../images/part12/ch41_08_sft_schema_real_bbox_example_en.svg)
 
 *Figure 41-8: Bbox is a structured field and should be recoverable as reviewable visual evidence.*
 
@@ -580,7 +580,7 @@ Image source: VQA-RAD test split, Hugging Face dataset [flaviagiammarino/vqa-rad
     "body_part": "chest",
     "view_or_series": "frontal chest radiograph",
     "image_role": "original_image",
-    "figure_ref": "ch41_05_sft_schema_real_chest_xray.png",
+    "figure_ref": "ch41_aux_sft_schema_real_chest_xray.png",
     "source_dataset": "VQA-RAD",
     "source_split": "test",
     "source_url": "https://huggingface.co/datasets/flaviagiammarino/vqa-rad",
@@ -606,8 +606,8 @@ Image source: VQA-RAD test split, Hugging Face dataset [flaviagiammarino/vqa-rad
   "visual_evidence": {
     "roi_id": "roi_000184_01",
     "bbox_2d": [593, 199, 839, 524],
-    "bbox_overlay_ref": "ch41_06_sft_schema_bbox_overlay.png",
-    "crop_ref": "ch41_07_sft_schema_zoom_roi.png",
+    "bbox_overlay_ref": "ch41_aux_sft_schema_bbox_overlay.png",
+    "crop_ref": "ch41_aux_sft_schema_zoom_roi.png",
     "target_description": "right lung field focal opacity candidate",
     "evidence_requirements": [
       "verify focality",
@@ -640,7 +640,7 @@ Image source: VQA-RAD test split, Hugging Face dataset [flaviagiammarino/vqa-rad
     {
       "role": "user",
       "content": [
-        {"type": "image", "image_id": "image_000184_zoom_roi_01", "source_tool": "Zoom-in", "figure_ref": "ch41_07_sft_schema_zoom_roi.png"},
+        {"type": "image", "image_id": "image_000184_zoom_roi_01", "source_tool": "Zoom-in", "figure_ref": "ch41_aux_sft_schema_zoom_roi.png"},
         {"type": "text", "text": "The tool returned a local zoom observation. Continue based on the new evidence."}
       ]
     },
@@ -700,7 +700,7 @@ These failure modes show that tool-use data quality is not determined by answer 
 
 Quality control for medical image tool-use data should be layered, rather than postponed until final packaging. A more reasonable approach is to set gates separately at question generation, region validation, tool-observation generation, trajectory synthesis, and training packaging.
 
-![Figure 41-9: Quality-control and human-review gates](../../images/part12/ch41_04_quality_review_gate_en.svg)
+![Figure 41-9: Quality-control and human-review gates](../../images/part12/ch41_09_quality_review_gate_en.svg)
 
 *Figure 41-9: Quality-control and human-review gates. Medical image tool-use data needs to check answer, evidence, and behavior together; automated validation and human review should complement each other.*
 

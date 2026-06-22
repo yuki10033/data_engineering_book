@@ -54,8 +54,18 @@ def sha256(path: Path) -> str:
 def copy_file(src: Path, dst: Path) -> None:
     if not src.exists():
         return
+    if should_skip_path(src):
+        return
     dst.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(src, dst)
+
+
+def should_skip_path(path: Path) -> bool:
+    return any(part in {".DS_Store", "__MACOSX"} for part in path.parts)
+
+
+def ignore_system_files(_dir: str, names: list[str]) -> set[str]:
+    return {name for name in names if name == ".DS_Store" or name == "__MACOSX"}
 
 
 def copy_tree(src: Path, dst: Path) -> None:
@@ -63,7 +73,7 @@ def copy_tree(src: Path, dst: Path) -> None:
         return
     if dst.exists():
         shutil.rmtree(dst)
-    shutil.copytree(src, dst)
+    shutil.copytree(src, dst, ignore=ignore_system_files)
 
 
 def latex_root_tex() -> Path:
@@ -261,6 +271,8 @@ def collect_manifest(package_dir: Path) -> list[ManifestRow]:
     for path in sorted(package_dir.rglob("*")):
         if not path.is_file():
             continue
+        if should_skip_path(path):
+            continue
         if path.relative_to(package_dir).as_posix().startswith("Checksums/"):
             continue
         rel = path.relative_to(package_dir).as_posix()
@@ -299,6 +311,8 @@ def create_zip_archive(package_dir: Path) -> Path:
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(package_dir.rglob("*")):
             if not path.is_file():
+                continue
+            if should_skip_path(path):
                 continue
             archive.write(path, path.relative_to(package_dir.parent).as_posix())
     return zip_path
