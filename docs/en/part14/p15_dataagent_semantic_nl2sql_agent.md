@@ -6,20 +6,13 @@
 
 This project uses DataAgent to build a semantic BI assistant for enterprise structured data. The goal is not to let a model directly "guess SQL." Instead, the project organizes natural-language questions, the business semantic layer, database metadata, an NL2SQL sub-agent, result files, report generation, and runtime audit trails into a reusable data engineering chain.
 
-Read in engineering order, the chain is:
+Read in engineering order, the project follows a complete chain from business question to trustworthy delivery, as shown in Figure P15-1.
 
-```text
-business question
-  -> scenario prompt and task planning
-  -> semantic-layer schema retrieval
-  -> NL2SQL sub-agent
-  -> SQL validation and execution
-  -> CSV/SQL asset persistence
-  -> main-agent summary and report generation
-  -> execution trace and acceptance evaluation
-```
+![DataAgent semantic BI assistant engineering chain](../../images/part14/p15_dataagent_engineering_chain_en.png)
 
-The core objective is to turn enterprise BI Q&A from a one-off conversational capability into a configurable, auditable, and extensible data application.
+*Figure P15-1: Engineering chain of the DataAgent semantic BI assistant.*
+
+The chain starts with a business question. A scenario prompt and task-planning step then clarifies the analysis goal, metric definitions, filters, and expected output. Semantic-layer schema retrieval supplies the model with table, field, business-description, and relationship context before the main agent delegates structured querying to the NL2SQL sub-agent. The generated SQL is validated and executed, and the resulting SQL and CSV files are persisted as reviewable workspace assets rather than treated as transient intermediate outputs. The main agent uses those assets to summarize results and generate a report. Finally, execution traces, tool states, and acceptance signals are retained for audit, regression testing, and future iteration. The core objective is to turn enterprise BI Q&A from a one-off conversational capability into a configurable, auditable, and extensible data application.
 
 The chapter follows four main threads:
 
@@ -72,7 +65,7 @@ Common failures include input-distribution drift, missing schema fields, overly 
 
 ## Reproducible Resource Notes
 
-Reproduction materials should include data-source notes, minimal samples, configuration files, run commands, metric scripts, inspection reports, and artifact directories. The main text keeps the necessary snippets; complete notebooks, long scripts, and large files should be maintained separately as companion resources.
+Reproduction materials should include data-source notes, minimal samples, configuration files, run commands, metric scripts, inspection reports, and artifact directories. The main text keeps the necessary snippets; complete notebooks, long scripts, and large files should be maintained separately as companion resources. If the project is extended with enterprise metric definitions, a modeled semantic layer, or data-build pipelines, dbt's documentation, testing, and modeling mechanisms can be used as an optional reference (dbt Labs, 2026), but dbt is not a required dependency for this chapter.
 
 ## 1. Project Background: Why Enterprise BI Needs Agent Data Engineering
 
@@ -145,17 +138,17 @@ This case highlights DataAgent's distinctive capabilities: NL2SQL, Semantic Serv
 
 ## 4. Overall Architecture: From Business Question to Auditable Data Asset
 
-The project architecture has six layers. The following figure organizes entry, orchestration, query, asset, and governance relationships into a layered architecture.
+The semantic BI assistant in this chapter is not an isolated NL2SQL component. It is an application form inside the broader DataGallery ecosystem. It uses DataAgent for task understanding, tool orchestration, and execution control; Semantic Service for metadata, metric definitions, and semantic retrieval; and Data Studio and Data Ops to connect BI capability with applications, evaluation, observation, and continuous improvement. Figure P15-2 shows the architectural relationships that support this project.
 
-![Layered architecture for a DataAgent enterprise semantic BI assistant](../../images/part14/p15_dataagent_semantic_bi_layered_architecture_en.png)
+![DataGallery ecosystem architecture around DataAgent, Semantic Service, Data Studio, Data Ops, and foundation infrastructure](../../images/part14/p15_datagallery_architecture_vector.svg)
 
-*Figure P15-1: Layered architecture for the DataAgent enterprise semantic BI assistant.*
+*Figure P15-2: DataGallery ecosystem architecture around DataAgent.*
 
-The overall architecture diagram from the DataAgent repository is:
+At the core of the architecture, DataGallery Core provides the capabilities used most directly by the semantic BI assistant. The Data Intelligence Framework exposes the DataAgent SDK, while the Data Agent Engine is responsible for intent understanding, schema linking, SQL generation, execution validation, reflection and repair, and confidence selection. The Data Agent Shell defines runtime boundaries through privilege control, tool guardrails, and privacy-aware routing. In enterprise BI, these capabilities determine whether the model can understand a business question, select the right tool, and translate natural language into a controlled data operation.
 
-![DataAgent overall architecture](../../images/part14/p15_dataagent_agent_excalidraw_en.png)
+The semantic and data-support layers provide the context needed for reliable query generation. Semantic Distributed Runtime turns metadata ingestion, ontology modeling, and metric registry management into callable semantic services, so NL2SQL can use business descriptions, field meanings, metric definitions, and join relations instead of relying only on table and column names. Data System Service supplies data access, sandboxing, memory storage, and Agent UI/Web support, allowing SQL files, CSV outputs, reports, and runtime traces to become reviewable engineering artifacts.
 
-*Figure P15-2: Overall architecture of the DataAgent repository.*
+At the application and operations level, Data Studio corresponds to text-to-SQL, data analysis, data engineering, and business-process scenarios. Data Ops provides lifecycle capabilities such as full-chain visual tuning, benchmark evaluation, and observation. The foundation layer consists of models, data infrastructure, and hardware or chipsets. The key path in this project is therefore: a business question enters DataAgent; DataAgent uses semantic services to understand the data context and invoke NL2SQL capabilities; the resulting assets then flow into workspace, evaluation, and observation mechanisms so the answer can be audited, regressed, and improved over time.
 
 ### 4.1 Interface Layer
 
@@ -245,12 +238,12 @@ This chapter depends on DataAgent, Semantic Service, a value-match service, and 
 
 ### 5.2 Install the Project
 
-DataAgent is an agent data engineering framework in the DataGallery open-source ecosystem. The DataGallery open-source entry is [https://gitcode.com/datagallery](https://gitcode.com/datagallery), and the DataAgent source repository is [https://gitcode.com/datagallery/DataAgent](https://gitcode.com/datagallery/DataAgent). For DataGallery's role in this book, reproduction boundaries, and project-governance usage, see [Appendix G: DataGallery Open-source Ecosystem Overview](../appendix_g_datagallery_note.md).
+DataAgent is an agent data engineering framework in the DataGallery open-source ecosystem (DataGallery Contributors, 2026a). The DataGallery open-source entry is [https://gitcode.com/datagallery](https://gitcode.com/datagallery), and the DataAgent source repository is [https://gitcode.com/datagallery/dataagent](https://gitcode.com/datagallery/dataagent) (DataGallery Contributors, 2026b). For DataGallery's role in this book, reproduction boundaries, and project-governance usage, see [Appendix G: DataGallery Open-source Ecosystem Overview](../appendix_g_datagallery_note.md).
 
 First pin the version, then install dependencies from the repository root:
 
 ```bash
-git clone https://gitcode.com/datagallery/DataAgent.git
+git clone https://gitcode.com/datagallery/dataagent.git
 cd DataAgent
 git checkout <release-tag-or-commit>
 python -m venv .venv
@@ -938,5 +931,5 @@ As part of Part 14, this chapter validates earlier methods at the project level.
 3. Schick, T., Dwivedi-Yu, J., Dessi, R., Raileanu, R., Lomeli, M., Hambro, E., Zettlemoyer, L., Cancedda, N., & Scialom, T. (2023). Toolformer: Language Models Can Teach Themselves to Use Tools. arXiv:2302.04761.
 4. Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2023). ReAct: Synergizing Reasoning and Acting in Language Models. arXiv:2210.03629.
 5. dbt Labs. (2026). dbt Documentation. https://docs.getdbt.com/.
-6. DataGallery Contributors. (2026). DataGallery organization page. https://gitcode.com/datagallery.
-7. DataGallery Contributors. (2026). DataAgent source repository. https://gitcode.com/datagallery/DataAgent.
+6. DataGallery Contributors. (2026a). DataGallery organization page. https://gitcode.com/datagallery.
+7. DataGallery Contributors. (2026b). DataAgent source repository. https://gitcode.com/datagallery/dataagent.
