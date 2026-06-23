@@ -661,7 +661,7 @@ A reproducible benchmark version requires pinned version numbers for the trainin
 
 To facilitate experimental reproduction and review of data processing workflows, the MindSpore companion implementation entry point for SparseTable-Bench is:
 
-https://github.com/champion666/SparseTable-Bench-MindSpore
+[champiom666/SparseTable-Bench-MindSpore](https://github.com/champiom666/SparseTable-Bench-MindSpore)
 
 This repository serves as the companion implementation entry for this chapter, organizing data reading, occlusion construction, and evaluation reproduction experiments. A complete companion implementation should typically include: an STB data reader; HTML and cell schema transformation scripts; `[EMPTY_CELL]` token normalization; bounding box coordinate transformation; an STB-Mask-Stress generation script; TEDS/TEDS-S evaluation scripts; and a minimal example configuration for MindSpore training. Only then can a closed loop be formed among the book chapter, dataset documentation, and code repository.
 
